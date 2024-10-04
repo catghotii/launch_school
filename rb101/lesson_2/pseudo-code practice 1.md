@@ -144,7 +144,7 @@ Iterate over elements:
 - increment the index number by 1
 - set the current element
 - if the index number % 2 == 1         # basically .odd? method
-  - skip the iteration
+	- skip the iteration
 - else if index number % 2 != 1
 	- add the current element to the new array
 
@@ -153,31 +153,6 @@ Stop when the index number is greater than or equal to the length of the new arr
 Display the new array.
   
 =end
-
-=begin
-
-# FORMAL
-
-START
-
-GET array of integers
-SET array
-SET new_array = []
-
-SET current_element
-SET index_count = 0
-SET array_length = array.length
-
-WHILE array.length >= index_count
-  SET new_array = new_array + current_element
-  IF index_count % 2 == 1
-    NEXT
-  index_count = index_count + 1
-
-PRINT new_array
-  
-=end
-```
 
 ```ruby
 =begin
@@ -203,7 +178,9 @@ WHILE array.length >= index_count
 PRINT new_array
   
 =end
+```
 
+```ruby
 array = [1,4,7,2,5]
 new_array = []
 index_count = 0
@@ -244,14 +221,18 @@ Variables:
 - string
 - character
 - index_counter
+- current_character
 - match_counter
 - saved_index
 
 Actions:
-- Iterate over each character
+Iterate over each character
 - Check for a match
   - if match found, match_counter by 1
-  - save index to a variable
+    - save index to a variable
+- increment index by 1
+- reset current character
+
 - Repeat until the end of the string or when three matches are found
 
 - if 3 matches are found: return the saved index
@@ -269,14 +250,13 @@ SET character
 
 SET index_counter = 0
 SET match_counter = 0
-SET current_character = string[index_counter]
+SET current_character = ""
 
 WHILE match_counter < 3
   SET current_character = string[index_counter]
   IF character == current_character
     match_counter = match_counter + 1
   SET index_counter = index_counter + 1
-  SET character_counter = "#{string[index_counter]}"
 
 SET result = index_counter
 
