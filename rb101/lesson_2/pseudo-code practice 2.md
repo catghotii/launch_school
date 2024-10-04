@@ -189,7 +189,13 @@ p every_other([1,4,7,2,5])
 
 ```ruby
 def every_other(array)
-  array.select { |e| e.odd? }
+  new_array = []
+  array.each_with_index do |value, index|
+    if index.even?
+      new_array << value
+    end
+  end
+  new_array
 end
 
 p every_other([1,4,7,2,5])
