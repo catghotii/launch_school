@@ -15,11 +15,13 @@ def integer?(input)
 end
 
 def monthly_payment(loan_amount, duration, apr)
-  loan_amount.to_f * ((monthly_interest_rate(apr)) / (1 - (1 + monthly_interest_rate(apr))**(-duration.to_f)))
+  rate = monthly_interest_rate(apr)
+
+  loan_amount.to_f * (rate / (1 - (1 + rate)**(-duration.to_f)))
 end
 
 def monthly_interest_rate(apr)
-  apr.to_f / 12
+  (apr.to_f / 100) / 12
 end
 
 def duration_in_months(time)
@@ -41,14 +43,14 @@ loop do
   end
 end
 
-user_apr = ''
+apr = ''
 loop do
   prompt("What is the Annual Percentage Rate (APR)?")
-  user_apr = gets.chomp
+  apr = gets.chomp
 
-  if number?(user_apr)
+  if number?(apr)
     break
-  elsif user_apr.include?('%')
+  elsif apr.include?('%')
     prompt("Please only enter numbers without the % sign.")
   else
     prompt("Hmm... that doesn't look like a valid number.")
@@ -81,4 +83,4 @@ loop do
 end
 
 prompt("Calculating...")
-prompt("Your monthly payment is #{monthly_payment(user_loan_amount, user_loan_duration, user_apr)}")
+prompt("Your monthly payment is #{monthly_payment(user_loan_amount, user_loan_duration, apr)}")
