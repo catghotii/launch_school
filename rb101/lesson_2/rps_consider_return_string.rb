@@ -4,7 +4,7 @@ def prompt(message)
   Kernel.puts("=> #{message}")
 end
 
-def display_results(player, computer)
+def results(player, computer)
     if (player == 'rock' && computer == 'scissors') || 
        (player == 'paper' && computer == 'rock') || 
        (player == 'scissors' && computer == 'paper')
@@ -35,7 +35,7 @@ loop do
    
   prompt("You chose #{choice}; Computer chose #{computer_choice}")
 
-  prompt(display_results(choice, computer_choice))
+  prompt(results(choice, computer_choice))
 
   prompt("Do you want to play again?")
   answer = Kernel.gets().chomp()
