@@ -1,0 +1,63 @@
+=begin
+  
+determines monthly payment assuming the interest is compounded monthly
+
+3 pieces of information:
+- the loan amount
+- the annual percentage rate (APR)
+- the loan duration
+
+need to calculate:
+- monthly interest rate (APR / 12)
+- loan duration in months
+
+use the following formula:
+m = p * (j / (1 - (1 + j)**(-n)))
+
+m = monthly payment
+p = loan amount
+j = monthly interest rate
+n = loan duration in months
+
+user input:
+loan amount
+loan duration
+
+---
+
+my actions:
+1. write pseudocode
+2. flowchart
+3. write an program!
+
+
+
+# PSEUDO-CODE
+
+# casual
+
+Ask user for loan amount
+Get user input - SET as loan_amount
+
+Ask user for APR
+Get user input - SET as APR
+
+Ask user for loan duration
+Get user input - SET as loan_duration
+
+# formal
+
+GET user input - SET loan_amount
+GET user input - SET APR
+GET user input - SET loan_duration
+
+SUBPROCESS calculate monthly_interest_rate
+SUBPROCESS calculate loan_duration_in_months
+
+calculate monthly_payment
+
+DISPLAY RESULT
+
+(is that it?)
+
+=end
