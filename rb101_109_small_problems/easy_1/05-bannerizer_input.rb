@@ -42,9 +42,9 @@ def print_in_box(string)
        "+-#{box_lines}-+"
 end
 
-print_in_box("I'm in a box")
-print_in_box('To boldly go where no one has gone before')
-print_in_box('')
+puts "What's in the box?"
+user_input = gets.chomp
+print_in_box(user_input)
 
 # LS Solution
 
@@ -62,5 +62,7 @@ end
 
 # Further Exploration
 
-# Modify this method so it will truncate the message if it will be too wide to fit inside a standard terminal window (80 columns, including the sides of the box). For a real challenge, try word wrapping very long messages so they appear on multiple lines, but still within a box.
+# Modify this method so it will truncate the message if it will be too wide to fit inside a standard terminal window (80 columns, including the sides of the box).
+
+# For a real challenge, try word wrapping very long messages so they appear on multiple lines, but still within a box.
 
