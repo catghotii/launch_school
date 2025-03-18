@@ -67,3 +67,39 @@ puts stringy_3(6,1)
 puts stringy_3(9,0)
 puts stringy_3(4)
 puts stringy_3(7)
+
+# case statement
+
+def stringy_4(size, starting_number=1)
+  numbers = []
+
+  case starting_number
+  when 1
+    size.times do |index|
+      number = index.even? ? 1 : 0
+      numbers << number
+    end
+  when 0
+    size.times do |index|
+      number = index.even? ? 0 : 1
+      numbers << number
+    end
+  end
+
+  numbers.join
+end
+
+puts stringy_4(6,1)
+puts stringy_4(9,0)
+puts stringy_4(4)
+puts stringy_4(7)
+
+# how to condense times method block even further?
+
+# def stringy_5(size, starting_number=1)
+
+
+# puts stringy_5(6,1)
+# puts stringy_5(9,0)
+# puts stringy_5(4)
+# puts stringy_5(7)
