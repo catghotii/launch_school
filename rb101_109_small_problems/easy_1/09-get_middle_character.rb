@@ -13,10 +13,9 @@ center_of('x') == 'x'
 =end
 
 def center_of(string)
-  string_size = string.size
   halfway = string_size / 2
 
-  if string_size.even?
+  if string.size.even?
     string.slice(halfway - 1, 2)
   else
     string.slice(halfway)
