@@ -3,16 +3,7 @@
 # Assume this rule is good for any year greater than year 0. Write a method that takes any year greater than 0 as input, and returns true if the year is a leap year, or false if it is not a leap year.
 
 def leap_year?(year)
-  status = if year % 4 != 0
-    false
-  elsif (year % 4 == 0 && year % 100 != 0)
-    true
 
-  elsif (year % 4 == 0 && year % 100 == 0 && year % 400 == 0)
-    true
-  end
- 
- status
 end
 
 p leap_year?(2016) == true
