@@ -1,0 +1,7 @@
+not completed:
+
+- [ ] 02   What Century is That?
+- [ ] 03   Leap Years (Part 1)
+- [ ] 04   Leap Years (Part 2)
+- [ ] 09   Convert a Number to a String!
+- [ ] 10   Convert a Signed Number to a String!
