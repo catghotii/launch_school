@@ -156,7 +156,6 @@ def feeling_lucky
     when "1"
       user_time = time_period_selection(choice)
       print_in_box("A reading for the #{user_time}...")
-      print_description(card_1)
       print_empty_line
       print_in_box("The #{card_1.capitalize} Tarot Card Description")
       print_description(card_1)
@@ -164,7 +163,6 @@ def feeling_lucky
     when "2"
       user_time = time_period_selection(choice)
       print_in_box("A reading for the #{user_time}...")
-      print_description(card_2)
       print_empty_line
       print_in_box("The #{card_2.capitalize} Tarot Card Description")
       print_description(card_2)
@@ -172,13 +170,12 @@ def feeling_lucky
     when "3"
       user_time = time_period_selection(choice)
       print_in_box("A reading for the #{user_time}...")
-      print_description(card_2)
       print_empty_line
       print_in_box("The #{card_3.capitalize} Tarot Card Description")
       print_description(card_3)
       card_reading(card_3, card_3_orientation.to_sym, user_time)
     when "4"
-      puts "----under construction-----"
+      puts "----under construction----"
     when "x"
       break
     end
