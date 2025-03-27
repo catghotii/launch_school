@@ -132,7 +132,6 @@ def feeling_lucky
   shuffle_deck = VALID_CARDS.shuffle
   spread_array = []
   spread_array.push(shuffle_deck[0], shuffle_deck[1], shuffle_deck[2])
-  p spread_array
   spread_hash = Hash[spread_array.map {|card| [card, VALID_ORIENTATION.sample]}]
 
   card_1 = spread_array[0]
