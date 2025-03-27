@@ -136,10 +136,10 @@ def feeling_lucky
   print_empty_line
   print_empty_line
   puts "Your Tarot Spread:"
-  print_empty_line
-  print_card_spread(spread_array, spread_hash)
 
   loop do
+    print_empty_line
+    print_card_spread(spread_array, spread_hash)
     print_empty_line
     puts "Select an option to read more about your card spread:"
     print_empty_line
