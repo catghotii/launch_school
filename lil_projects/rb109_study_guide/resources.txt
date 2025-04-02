@@ -1,0 +1,4 @@
+https://stackoverflow.com/questions/6012930/how-to-read-lines-of-a-file-in-ruby
+https://bito.ai/resources/ruby-hash-to-json-json-explained/
+https://stackoverflow.com/questions/3183786/how-to-convert-a-ruby-hash-object-to-json
+https://hackernoon.com/ruby-how-to-readwrite-json-file-a23h3vxa
