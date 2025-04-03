@@ -35,25 +35,60 @@ def print_newline
 end
 
 def random_topic_selector
-    puts "Choose a section:"
-    puts "    1 - Variables"
-    puts "    2 - Methods"
-    puts "    3 - General"
-    puts "    4 - I'm feeling lucky"
-    puts "    Q - Go back"
-    section_choice = gets.chomp
+  puts "Choose a section:"
+  puts "    1 - Variables"
+  puts "    2 - Methods"
+  puts "    3 - General"
+  puts "    4 - I'm feeling lucky"
+  puts "    Q - Go back"
+  section_choice = gets.chomp
 
-    case section_choice
-    when '1'
-      RB109_TOPICS[:variables].sample
-    when '2'
-      RB109_TOPICS[:methods].sample
-    when '3'
-      RB109_TOPICS[:general].sample
-    when '4'
-      rb109_topics_all = RB109_TOPICS[:variables] + RB109_TOPICS[:methods] + RB109_TOPICS[:general]
-      rb109_topics_all.sample
-    end
+  random_topic = ''
+
+  case section_choice
+  when '1'
+    random_topic = RB109_TOPICS[:variables].sample
+    topic_section = RB109_TOPICS.select { |key, value| value.include?(random_topic) }.each_key.first
+    puts "Chosen topic: #{topic_section.to_s.capitalize}: #{random_topic}"
+  when '2'
+    random_topic = RB109_TOPICS[:methods].sample
+    topic_section = RB109_TOPICS.select { |key, value| value.include?(random_topic) }.each_key.first
+    puts "Chosen topic: #{topic_section.to_s.capitalize}: #{random_topic}"
+  when '3'
+    random_topic = RB109_TOPICS[:general].sample
+    topic_section = RB109_TOPICS.select { |key, value| value.include?(random_topic) }.each_key.first
+    puts "Chosen topic: #{topic_section.to_s.capitalize}: #{random_topic}"
+  when '4'
+    rb109_topics_all = RB109_TOPICS[:variables] + RB109_TOPICS[:methods] + RB109_TOPICS[:general]
+    random_topic = rb109_topics_all.sample
+    topic_section = RB109_TOPICS.select { |key, value| value.include?(random_topic) }.each_key.first
+    puts "Chosen topic: #{topic_section.to_s.capitalize}: #{random_topic}"
+  end
+
+  answer = ''
+  final_topic = random_topic
+  loop do
+    puts "Do you want a different topic? (y/n)"
+    answer = gets.chomp.downcase
+    break answer == 'y' || answer == 'n'
+  end
+
+  if answer == 'y'
+    final_topic = random_topic_selector
+  else
+    return final_topic
+  end
+end
+
+def randomize_again?
+  answer = ''
+  loop do
+    puts "Do you want a different topic? (y/n)"
+    answer = gets.chomp.downcase
+    break answer == 'y' || anwer == 'n'
+  end
+
+  answer == 'y' ? true : false
 end
 
 def create_a_log(section, topic)
@@ -103,7 +138,8 @@ puts "Study Guide for RB109 Exam"
 
 # main menu loop
 loop do
-  puts "Currently studying: #{session_section.to_s.upcase}: #{session_topic.upcase}" if !session_section.nil? && !session_topic.nil? # || !session_topic.empty?
+  puts "Currently studying:"
+  puts "#{session_section.to_s.upcase}: #{session_topic.upcase}" if !session_section.nil? && !session_topic.nil?
   print_newline
   puts "Hi! What would you like to do today?"
   print_newline
@@ -127,9 +163,6 @@ loop do
   when '2'
     session_topic = random_topic_selector
     session_section = RB109_TOPICS.select { |key, value| value.include?(session_topic) }.each_key.first
-    # puts session_section.each_key.first.capitalize
-    puts "#{session_section.to_s.capitalize}: #{session_topic}"
-    print_newline
   when '3'
     create_a_log(session_section, session_topic)
   when '4'

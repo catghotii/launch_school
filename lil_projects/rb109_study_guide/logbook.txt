@@ -1,0 +1,4 @@
+log_entry_001 = {"2025-04-03 13:52:36 +1100"=>{:methods=>"Default parameters"}}
+log_entry_002 = {"2025-04-03 15:10:23 +1100"=>{:general=>"Output vs. return"}}
+log_entry_003 = {"2025-04-03 16:33:30 +1100"=>{:variables=>"Local variable scope in relation to blocks, including nested blocks and peer blocks"}}
+log_entry_004 = {"2025-04-03 17:16:41 +1100"=>{:variables=>"Variable shadowing"}}
