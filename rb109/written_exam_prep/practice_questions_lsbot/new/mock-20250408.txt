@@ -1,0 +1,57 @@
+Question 1: Variable Scope (Basic)
+What will the following code output? Explain why.
+# ruby
+
+a = 7
+
+def my_method
+  a = 5
+  puts a
+end
+
+my_method
+puts a
+Question 2: Method Arguments (Intermediate)
+What will the following code output? Explain why.
+# ruby
+
+def greeting(name, options = {})
+  if options.empty?
+    puts "Hi, my name is #{name}"
+  else
+    puts "Hi, my name is #{name} and I'm #{options[:age]} years old and I live in #{options[:city]}"
+  end
+end
+
+greeting("Bob")
+greeting("Bob", {age: 62, city: "New York"})
+greeting("Bob", age: 62, city: "New York")
+Question 3: Pass by Reference vs Pass by Value (Intermediate)
+Explain what the following code will output and why. Use examples from the code to support your explanation.
+# ruby
+
+def change_name(name)
+  name = "Bob"
+end
+
+name = "Jim"
+change_name(name)
+puts name
+
+def add_to_array(array)
+  array << "new element"
+end
+
+my_array = ["original element"]
+add_to_array(my_array)
+p my_array
+Question 4: Truthiness (Basic)
+What values in Ruby are considered "falsey"? What do the following expressions evaluate to and why?
+# ruby
+
+puts !!nil
+puts !!false
+puts !!0
+puts !!""
+puts !!(3 > 5)
+Would you like solutions to these questions or would you prefer to work through them first? I can also provide additional questions focusing on other topics like collections, iteration, or Ruby-specific syntax.

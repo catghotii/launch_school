@@ -1,5 +1,6 @@
 # 2. Intermediate: Examine the following code and explain what happens on each line and the return value of the example method:
 
+```ruby
 def example(str)
  i = 3
  loop do
@@ -12,8 +13,7 @@ end
 
 result = example("hello")
 puts result
-
-=begin
+```
 
 On line 11, the variable `result` is initialised to the return value of `example("hello")`. The `example` method called and passed the string object "hello" as an argument.
 
@@ -25,6 +25,6 @@ Once this condition is met, and the `break` keyword is executed, execution resum
 
 The `puts` method call is passed a reference to the string object that `result` references, so the output will display:
 
+```
 HELLO!
-
-=end
+```

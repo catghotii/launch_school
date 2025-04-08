@@ -1,6 +1,4 @@
-=begin
-
-1. Basic: What is the difference between puts and return in Ruby? Provide an example that demonstrates this difference.
+### 1. Basic: What is the difference between puts and return in Ruby? Provide an example that demonstrates this difference.
 
 Every expression in Ruby evaluates to something and returns a value, although they do not necessarily have an output.
 
@@ -10,28 +8,33 @@ Output is used for human consumption; the program does not use output. Output is
 
 Here's an example:
 
+```ruby
 def display_string(string)
   puts string
 end
 
 display_string("Hello")
 p display_string("Hello")
+```
 
-Code explanation:
+### Code explanation:
 
-On line __, the `display_string` method is called and passed a string object "Hello" as an argument. The local variable `string` is initialised to the string object `"Hello"`. In the method definition, the `puts` method is called and passed this string object as an argument, printing it to the console. The return value of this method is the evaluated result of the last (and only) expression in the method body; as `puts` always returns `nil`, the return value is `nil`. This is not printed to the console.
+On line 5, the `display_string` method is called and passed a string object "Hello" as an argument. The local variable `string` is initialised to the string object `"Hello"`. In the method definition, the `puts` method is called and passed this string object as an argument, printing it to the console. The return value of this method is the evaluated result of the last (and only) expression in the method body; as `puts` always returns `nil`, the return value is `nil`. This is not printed to the console.
+
 
 To demonstrate that the return value was indeed `nil`, the last line of code in the program is `p display_string("Hello")`. What happens when this line is executed, is that the `p` method prints its argument to the console. In this case, the value of the argument is the same value as the return value of the method, `nil`. When this line is evaluated, it executes the `display_method` method, which has a side effect of printing the string object "Hello", and then also prints the argument, which is the return value of the method -- this is why the console also prints and makes visible `nil`
 
 The output for this code is:
 
+```
 Hello
 Hello
 nil
+```
 
 ---
 
-# LSBot alternative code example and walkthrough
+### LSBot alternative code example and walkthrough
 
 Here's another example that clearly illustrates the difference between puts and return values in Ruby:
 
@@ -64,5 +67,3 @@ This example demonstrates several important Ruby concepts:
 •   Return values can be captured and used elsewhere in your program
 
 This illustrates what's discussed in the "Coding Tips" assignment where it mentions that methods should generally either return a meaningful value OR have side effects like displaying output, but ideally not both for cleaner code organization. As noted in the Launch School materials, "Methods should not both display output and return a meaningful value." (https://launchschool.com/lessons/8a39abff/assignments/4806e825)
-
-=end

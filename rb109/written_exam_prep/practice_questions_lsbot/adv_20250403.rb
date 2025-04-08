@@ -1,1 +1,0 @@
-# 4. Advanced: Explain what the concept of "variable scope" means in Ruby. Illustrate your explanation with examples of local variable scope within methods, blocks, and conditionals.
