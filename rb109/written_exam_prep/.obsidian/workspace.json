@@ -1,0 +1,225 @@
+{
+  "main": {
+    "id": "61656c0dee651209",
+    "type": "split",
+    "children": [
+      {
+        "id": "301a6e0fec7eabf6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ea9ee2c5a9803332",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "lsbot/answers/2_intermediate/int-20250408-method_args.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "int-20250408-method_args"
+            }
+          },
+          {
+            "id": "450b3549a756e317",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "admin/checklist - first pass.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "checklist - first pass"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "85a96d80f9314a57",
+    "type": "split",
+    "children": [
+      {
+        "id": "8691bb6266e2458c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e98a1074d3fdc41a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "c9f959972ba11a37",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "d12e88ce3b8bb181",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 331.50312423706055
+  },
+  "right": {
+    "id": "b3db2b76e353c910",
+    "type": "split",
+    "children": [
+      {
+        "id": "c91b3f9d8b031425",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "127991b1b497b454",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "admin/checklist - first pass.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for checklist - first pass"
+            }
+          },
+          {
+            "id": "6ee2c2c05e8488f1",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Welcome.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Welcome"
+            }
+          },
+          {
+            "id": "a99560734e366d3b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "5d9beedf20e23c52",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "admin/checklist - first pass.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of checklist - first pass"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "450b3549a756e317",
+  "lastOpenFiles": [
+    "the_spot/questions/object_passing-variables_as_pointers.md",
+    "admin",
+    "the_spot/answers/object_passing-variables_as_pointers-20250413-WIP.9of12.md",
+    "exercises/ruby_basics/questions/variable_scope.md",
+    "exercises/ruby_basics/questions/loops_1.md",
+    "exercises/ruby_basics/answers",
+    "exercises/ruby_basics/questions",
+    "exercises/ruby_basics",
+    "lsbot/new/int-20250408-pass_by_ref_val.md",
+    "lsbot/answers/1_basic/bas-20250408-truthiness.md",
+    "topics/Untitled.md",
+    "topics/ALL_WITH_EXAMPLES",
+    "lsbot/answers/1_basic/bas-20250408-truthiness_1.md",
+    "lsbot/answers/2_intermediate/int-20250408-method_args.md",
+    "lsbot/answers/2_intermediate/int-20250408-method_return_values.md",
+    "exercises/practice_problems",
+    "practice_problems",
+    "untitled folder",
+    "topics/General/truthiness-20250404.md",
+    "topics/other concepts/variable isolation.md",
+    "topics/Variables/variables_as_pointers-20250408.md",
+    "topics/Variables/variable_shadowing-20250403.md",
+    "topics/Variables/scope_of_constants-20250408.md",
+    "topics/Variables/mutating_vs_reassigning_variables-20250408.md",
+    "topics/Variables/local_variable_scope_method_definitions-20250408.md",
+    "topics/Variables/local_variable_scope_blocks-20250403.md",
+    "topics/Methods/parameters_vs_arguments-20250408.md",
+    "topics/Methods/method_def_vs_invocation-20250408.md",
+    "topics/Methods/default_parameters-20250403.md",
+    "topics/General/pass_by_value_vs_pass_by_reference-20250408.md",
+    "topics/General/output_vs_return-20250403.md",
+    "topics/truthiness-20250404.md",
+    "topics/other concepts",
+    "topics/example.rb",
+    "topics/everything so far.md",
+    "admin/checklist - first pass.md"
+  ]
+}
