@@ -17,10 +17,9 @@ display_string("Hello")
 p display_string("Hello")
 ```
 
-### Code explanation:
+#### Code explanation:
 
 On line 5, the `display_string` method is called and passed a string object "Hello" as an argument. The local variable `string` is initialised to the string object `"Hello"`. In the method definition, the `puts` method is called and passed this string object as an argument, printing it to the console. The return value of this method is the evaluated result of the last (and only) expression in the method body; as `puts` always returns `nil`, the return value is `nil`. This is not printed to the console.
-
 
 To demonstrate that the return value was indeed `nil`, the last line of code in the program is `p display_string("Hello")`. What happens when this line is executed, is that the `p` method prints its argument to the console. In this case, the value of the argument is the same value as the return value of the method, `nil`. When this line is evaluated, it executes the `display_method` method, which has a side effect of printing the string object "Hello", and then also prints the argument, which is the return value of the method -- this is why the console also prints and makes visible `nil`
 

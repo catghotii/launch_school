@@ -12,11 +12,11 @@ Methods:
 - [x] Parameters vs. arguments
 - [x] Default parameters
 - [ ] Implicit vs. explicit return values
-- [ ] Mutating vs. non-mutating methods
+- [x] Mutating vs. non-mutating methods
 - [ ] Using method return values as arguments to other methods
 
 General:
-- [ ] Mutable vs. immutable data types
+- [x] Mutable vs. immutable data types
 - [x] Output vs. return
-- [ ] Pass-by-reference vs. pass-by-value
-- [ ] Truthiness
+- [x] Pass-by-reference vs. pass-by-value
+- [x] Truthiness

@@ -40,7 +40,7 @@ The variable `a` is initialised with a reference to the string object `"hi there
 In the assignment from one variable to another, the variable on the left, `b`, receives a copy of the reference stored in the variable on the right, `a`. Both variables now point to the same address space in memory that contains the string object `"hi there"`.
 
 In the last line of the code, `a << ", Bob"`, `<<` is a method call that mutates the string object to which `a` is a reference, by concatenating its argument to the calling object — `a` now points to to the concatenated string `"hi there, Bob"`.
-
+23456
 Although the shovel operator was called on `a`, the variable `b` is also affected. Methods that mutate objects have implications for variables that also contain references to the object that's being changed: any variables pointing to that mutated object are also affected.
 
 Unlike reassignment (where new strings are created and therefore the variable's reference also changes), mutating methods change the object itself (which is stored in the same address in memory). This means that any variables that contain a reference to the mutated object continue to point to the same address space, but the address space itself has been mutated.
@@ -378,6 +378,29 @@ change_name(name)
 puts name
 ```
 
+The variable `name` is initialised with a reference to the string object `'jim'`. The `change_name` method is called and passed the string object `'jim'` as argument.
+
+Methods create their own scope: variables initialised in the outer code cannot be accessed or modified unless they are passed in as arguments and mutating methods are called on the corresponding objects.
+
+In the method definition, the local variable `name` is bound to the string object `'jim'` to which the outer variable passed as an argument, also called `name`, is a reference. The expression `name = 'bob'` is evaluated: the method's locally scoped variable `name` is reassigned to a new string object `'bob'`. Unlike mutating operations which change existing objects themselves, this expression is a reassignment, which creates a new string object, and the inner variable `name` now contains a different reference to this new string. The original object that was passed in as an argument is not affected by the reassignment operation, and any references to the original object remain unchanged as well, including the outer variable `name`.
+
+The return value of the method is the same as the evaluated result of the last (and only) expression in the method body, `name = 'bob'`, which evaluates to `'bob'`. Thus `change_name(name)` returns `'bob'`.
+
+The `puts name` method call prints the value of its argument `name` — in this case, `name` contains a reference to the original string object `'jim'` that was initialised in the outer scope. It is not affected by the reassignment operation in the method.
+
+The output is:
+
+```
+jim
+```
+
+And the return value of the entire code is the result of the last evaluated expression `puts name`, which is `nil`, since `puts` returns `nil`.
+
+This code demonstrates:
+- Ruby's pass by reference value behaviour: the reference to the object is passed in as an argument to a method, but the operation inside the method will determine what happens to that object and its reference
+- reassignments vs mutation: reassignments create new objects and change what a variable references, while mutating operations modify existing objects and any variables pointing to the object remain unchanged
+- variable scope of a method definition: a method definition creates its own scope and variables outside of the method can only be accessed and modified if they are passed in as arguments and mutated by the method
+
 ### Example 10
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
@@ -391,6 +414,30 @@ name = "jim"
 cap(name)
 puts name
 ```
+
+The variable `name` is initialised with a reference to the string object `"jim"`. The `cap` method is called and passed the string object `"jim"` as an argument.
+
+Methods create their own scope: variables initialised in the outer scope cannot be accessed or modified unless they are passed in as arguments and mutating methods are called on those corresponding objects.
+
+Inside the method definition, the local variable `str` is bound to the same string object `"jim"` to which the outer variable `name` is a reference. The `capitalize!` method is called on `str`, which mutates the string's contents to `"Jim"`. Unlike assignment operations that create new strings and change what a variable references, `str.capitalize!` is a mutating operation which means that the original object itself is modified, and any references to the same object will see this change, including the outer variable `name`. If the non-mutating `capitalize` was called on `str`, then the original object would remain unchanged and instead `str` would be bound to a new string object (and the variable is disconnected from the original reference).
+
+The return value of the method is the same as the evaluated result of the last (and only) expression in the method body `str.capitalize!`, which is `"Jim"`. Thus `cap(name)` returns `"Jim"`.
+
+The `puts name` method call outputs its argument `name`, which points to the string object `"Jim"` that has been mutated by the `cap` method invocation.
+
+The output is:
+
+```
+Jim
+```
+
+The return value of the entire code snippet is the result of the last evaluated expression `puts name`, which is `nil`, since `puts` always returns `nil`.
+
+This code demonstrates:
+- Ruby's pass by reference value behaviour: when a method is called, a reference to the object is passed in as an argument, and what happens to the object and any of its references is determined by the operations inside the method
+- Variable scope of a method definition: outer code variables can only be accessed and modified from within a method if they are passed in as arguments and mutating methods are called on these objects
+- Mutating methods (like `capitalize!`) that modify objects affect any of its references: destructive changes are visible when examining variables that point to the same object
+- Mutating methods vs non-mutating operations/methods
 
 ### Example 11
 

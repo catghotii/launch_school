@@ -1,4 +1,4 @@
-### LSBot Explainer
+### LSBot
 
 **Method Definition vs. Method Invocation in Ruby**
 

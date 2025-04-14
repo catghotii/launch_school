@@ -1,6 +1,10 @@
 {
   "textFontFamily": "IBM Plex Sans",
-  "baseFontSize": 15,
+  "baseFontSize": 14,
   "monospaceFontFamily": "JetBrains Mono",
-  "cssTheme": "AnuPpuccin"
+  "cssTheme": "AnuPpuccin",
+  "enabledCssSnippets": [
+    "disable_ligatures",
+    "checkbox_no_strikethrough"
+  ]
 }

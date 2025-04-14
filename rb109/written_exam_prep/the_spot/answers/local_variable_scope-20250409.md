@@ -86,6 +86,8 @@ puts a
 puts b
 ```
 
+#### Answer
+
 On line 1, variable `a` is initialised to reference integer object `4`, and on line 2, variable `b` is initialised to reference integer `2`.
 
 Within the loop, the variable `c` is initialised to reference integer object `3`. On the next line, variable `a`, which was initialised in the outer scope on line 1, undergoes a reassignment from within the block, receiving a copy of the reference stored in variable `c`, which points to integer object `3`. This reassignment from within the block follows local variable scope rules in relation to blocks, whereby variables initialised outside of a block are available from within the block. Effectively, variable `a` now points to the same integer object `3` that variable `c` is also pointing to.
@@ -213,20 +215,20 @@ Line-by-line:
 - On the 1st iteration, `sum += arr[0]`: `arr[0]` evaluates to `1`, which is the element at index 0 of the array object that's being iterated on; `sum`, which is pointing to integer `0`, is reassigned to the result of the expression `0 + 1`, which is `1` — `sum` now points to integer `1`. On the next line, `counter` increments by 1 to `1` (from `0`), and the if statement evaluates as false
 
 At this stage in execution:
-sum = 1
-counter = 1
+`sum = 1`
+`counter = 1`
 
 - On the 2nd iteration, `sum` is reassigned to the value of `sum + arr[1]` (`1 + 2`), which is `3`; counter increments to `2`, and the if statement evaluates as false
 
 At this stage in execution:
-sum = 3
-counter = 2
+`sum = 3`
+`counter = 2`
 
 - On the 3rd iteration, `sum` is reassigned to the evaluated result of `3 + 3`, which is `6`; counter is reassigned to `3`, and the if statement evaluates as false.
 
 At this stage in execution:
-sum = 6
-counter = 3
+`sum = 6`
+`counter = 3`
 
 - On the 4th iteration, `sum` is reassigned to the evaluated result of `6 + 4`, which is `10`; counter is `4`, and the if statement evaluates to true, so `break` is executed and execution of the `loop` method stops.
 

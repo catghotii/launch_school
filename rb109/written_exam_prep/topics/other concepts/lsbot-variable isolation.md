@@ -1,5 +1,11 @@
 
-**Variable Isolation in Ruby**Variable isolation refers to the concept that variables defined within one scope cannot be directly accessed from another scope. In Ruby, this is most commonly observed in two main contexts: method definitions and blocks.**Method Definition Scope**When you define a method in Ruby, it creates a self-contained scope that is isolated from the surrounding environment:
+**Variable Isolation in Ruby**
+
+Variable isolation refers to the concept that variables defined within one scope cannot be directly accessed from another scope. In Ruby, this is most commonly observed in two main contexts: method definitions and blocks.
+
+**Method Definition Scope**
+
+When you define a method in Ruby, it creates a self-contained scope that is isolated from the surrounding environment:
   
 ```ruby
 outside_variable = "I'm outside"  

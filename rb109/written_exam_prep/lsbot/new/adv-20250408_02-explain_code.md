@@ -1,14 +1,15 @@
-2.  ​Advanced​: What will the following code output and why? Explain in detail.
-<!---->
-# ruby
+### 2.  ​Advanced​: What will the following code output and why? Explain in detail.
 
-   def fix(value)
-     value.upcase!
-     value += '!'
-     value
-   end
+```ruby
+def fix(value)
+ value.upcase!
+ value += '!'
+ value
+end
 
-   s = 'hello'
-   t = fix(s)
-   puts s
-   puts t
+s = 'hello'
+t = fix(s)
+puts s
+puts t
+```
+

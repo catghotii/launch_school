@@ -1,0 +1,50 @@
+
+20250414
+
+### 1.  ​Basic​: 
+
+What is the difference between puts and return in Ruby? Provide an example that demonstrates this difference.
+
+### 2.  ​Intermediate​:
+
+Examine the following code and explain what happens on each line and the return value of the example method:
+
+```
+# ruby
+
+   def example(str)
+     i = 3
+     loop do
+       str = str.upcase
+       i -= 1
+       break if i == 0
+     end
+     str + "!"
+   end
+   
+   result = example("hello")
+   puts result
+```
+
+### 3.  ​Intermediate​:
+
+What does the following code output? Explain why:
+
+```
+# ruby
+
+   arr = [1, 2, 3, 4, 5]
+   new_arr = arr.map do |num|
+     if num > 3
+       puts num
+     else
+       num * 2
+     end
+   end
+   
+   p new_arr
+```
+ 
+### 4.  ​Advanced​:
+
+Explain what the concept of "variable scope" means in Ruby. Illustrate your explanation with examples of local variable scope within methods, blocks, and conditionals.
