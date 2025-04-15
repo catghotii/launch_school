@@ -24,9 +24,7 @@ Key characteristics:
 
 **Example 1: Basic String Processing**
 
-```
-# ruby
-
+```ruby
 # Without using return values as arguments
 name = gets.chomp
 capitalized_name = name.capitalize
@@ -41,9 +39,7 @@ This example shows how we can eliminate intermediate variables by directly passi
 
 **Example 2: Array Processing Pipeline**
 
-```
-# ruby
-
+```ruby
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 # Without using return values as arguments
@@ -67,3 +63,56 @@ This example demonstrates chaining multiple transformations: filtering even numb
 5.  ​**Performance misconceptions**​: Chaining methods doesn't necessarily improve performance compared to using intermediate variables; it primarily affects code style and readability.
 
 As you prepare for your RB109 assessment, make sure you understand how method return values flow through your program and how to leverage this concept to write efficient and readable code.
+
+
+## Summary
+
+This refers to using the return value of a method and immediately passing that value as input to another method, without storing it in a variable first (i.e. eliminate intermediate variables). This creates a chain of method calls where the output of one becomes the input to the next.
+
+Example 1: basic string processing
+
+```ruby
+# without using return values as arguments
+
+name = "ruby"
+screaming_name = name.upcase
+greeting = "Hello, #{screaming_name}!"
+puts greeting
+
+# using return values as arguments
+puts "Hello, #{name.upcase}!"
+```
+
+Example 2:
+
+```ruby
+# without using return values as arguments
+def double_characters(word)
+  arr = word.chars
+  arr_doubled = arr.map { |letter| letter * 2 }
+  word_double = arr_doubled.join
+end
+
+# using return values as arguments
+def double_characters_2(word)
+  word.chars.map { |letter| letter * 2 }.join
+end
+
+puts double_characters("ruby") # rruubbyy
+puts double_characters_2("cat") # ccaatt
+```
+
+Example 3: array processing pipeline
+
+```ruby
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# without using return values as arguments
+evens = numbers.select  { |num| num.even? }
+squared = evens.map { |num| num ** 2 }
+sum = squared.reduce(0) { |total, num| total + num } # the ‘0’ in `reduce(0)` sets the initial value
+puts sum
+
+# using return values as arguments
+puts numbers.select { |num| num.even? }.map { |num| num ** 2 }.reduce(0) { |total, num| total + num }
+```

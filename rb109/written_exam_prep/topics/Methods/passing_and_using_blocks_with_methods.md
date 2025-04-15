@@ -1,5 +1,5 @@
 
-## LSBot
+### LSBot
 
 **Definition and Key Characteristics**
 
@@ -115,3 +115,93 @@ end
 4.  ​**Forgetting that blocks have return values**​: The return value of a block is the value of the last evaluated expression in the block, which can be used by the method that called the block.
 
 Remember that blocks are a fundamental part of Ruby and understanding how they work with variable scope is especially important as you prepare for the RB109 assessment.
+
+### Summary
+
+**Block**: a piece of code that can be passed to a method; associated with method invocation
+
+Passing a block to a method is essentially passing a behaviour as an argument to a method.
+
+- defined using `do/end` or `{}`; can accept parameters which are defined between `||`
+- methods can execute blocks using the `yield` keyword
+- can access variables from their surrounding scope
+- have their own return values, which can be used by calling the method
+
+**Things to remember!**
+
+- blocks have return values: the return value of the block is the value of the last evaluated expression, and can only be used by the method that called the block
+- variable scope: blocks can access variables in its surrounding scope, but methods cannot.
+- a block is part of a method invocation, not a method definition.
+- to use a block in a method, the block must be passed as an argument to the method, but the method must also be defined to use the block
+
+**Code examples**
+
+Example 1: simple iteration with blocks
+
+```ruby
+animals = ['cat', 'dog', 'pig']
+
+animals.each { |animal| puts animal }
+
+# cat
+# dog
+# pig
+```
+
+The `each` method is called on `animals` and passed a block as an argument. In each iteration of the block, the current element of the array is bound to the block parameter `animal`, and `puts animal` is executed, which outputs the string element. The block's return value is the same as the evaluated result of the last expression, which is `nil`, since `puts` always returns `nil`. The each method returns its calling object—in this case the array object `['cat', 'dog', 'pig']`.
+
+Example 2: writing a custom method that uses a block
+
+```ruby
+def my_method
+  puts "Before the block"
+  yield if block_given? # execute the block if one was provided
+  puts "After the block"
+end
+
+# calling with method with a block
+my_method do
+  puts "I'm inside the block!"
+end
+
+# calling a method without a block
+my_method
+
+# output:
+
+# Before the block
+# I'm inside the block!
+# After the block
+# Before the block
+# After the block
+```
+
+Example 3: using block return values
+
+```ruby
+def calculate(num1, num2)
+  result = yield(num1, num2) if block_given?
+  puts "The result is #{result}"
+end
+
+calculate(5, 3) { |a, b| a + b }
+calculate(5, 3) { |a, b| a - b }
+calculate(5, 3) { |a, b| a * b }
+```
+
+Example 3: methods must be defined to use a block. just because a block is passed to a method does not mean that it will be executed!
+
+```ruby
+def greeting
+  puts "Goodbye"
+  # no yield statement, so block is never executed
+  # yield if block_given?
+end
+
+word = "Hello"
+
+greeting do
+  puts word
+end
+```
+

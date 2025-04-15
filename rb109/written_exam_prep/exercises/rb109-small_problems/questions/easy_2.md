@@ -120,7 +120,7 @@ What does this code print out? Think about it for a moment before continuing.
 
 If you said that code printed
 
-```ruby
+```
 Alice
 Bob
 ```

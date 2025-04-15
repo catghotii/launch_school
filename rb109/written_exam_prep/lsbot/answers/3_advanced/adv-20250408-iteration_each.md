@@ -1,4 +1,5 @@
 Question 5: Collections and Iteration (Advanced)
+
 Explain what happens in the following code, line by line. What is the final value of array? Why?
 
 ```ruby

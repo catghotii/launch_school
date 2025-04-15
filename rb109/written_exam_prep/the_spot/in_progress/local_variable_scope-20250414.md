@@ -30,7 +30,7 @@ This code demonstrates:
 - how reassignments create new objects and change what a variable references, without affecting other variables that reference the original object
 - variables as pointers: they do not contain objects themselves but rather references to objects held in address spaces in memory
 
-### Example 2
+### Example 2-20250415
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -48,7 +48,17 @@ puts a
 puts b
 ```
 
-### Example 3
+The variable `a` is initialised with a reference to the integer `4` in the outer code.
+
+The `loop` method is called and passed a block: in each iteration of the block, `a` is reassigned to the integer `5`. This is because blocks can access and modify variables from the surrounding scope (in this case, the outer scope), which means variables initialised in the outer scope can be reassigned from within the block. Before execution of the method reaches `break` (there is only one iteration), the variable `b` is initialised with a reference to the integer `3`. `b` is only available to the block and cannot be accessed or modified by the outer code (or any peer blocks). The return value of the block is the last evaluated expression `break` which returns `nil` (this is also the return value of the method). 
+
+The `puts a` method outputs its argument `a`, which is `5`. When `puts b` is evaluated, Ruby throws a NameError message because there is no variable `b` visible to the outer code; the variable `b` inside the block cannot be accessed.
+
+This code demonstrates:
+- variable scope rules in relation to blocks, whereby blocks can access and modify variables initialised in the outer code, but not vice versa.
+- reassignment of variables from within a block
+
+### Example 3-20250415
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -65,6 +75,17 @@ end
 puts a
 puts b
 ```
+
+In the outer scope, variables `a` and `b` are initialised with references to the integers `4` and `2`, respectively.
+
+The `loop` method is called and passed a block: inside the block, the variable `c` is initialised with a reference to the integer `3`. The next expression in the code is evaluated: `a = c` is a reassignment of one variable to another—in this case, `a` receives a copy of the reference contained in the variable `c`, which is `3`. Both `a` and `c` point to the same object. This expression is a reassignment from within the block because `a`, which was initialised in the outer scope, can be accessed and modified from within the block. The `break` statement is evaluated, which terminates the `loop` method. The return value of the block is the last evaluated expression `break` which returns `nil`. (This is also the method's return value.)
+
+`puts a` outputs `3` and `puts b` outputs `2`. The return value of the code snippet is the same as the last evaluated expression in the code, `puts b`, which is `nil` (since `puts` always returns `nil`).
+
+This code demonstrates:
+- variable scope of a block: variables initialised outside of the block can be accessed and modified from within the block (and variables initialised inside the block cannot be accessed by the outer code)
+- reassignment of variables from within a block
+- assignment of one variable to another: the variable on the left of the assignment operator receives a copy of the reference that the variable on the right references
 
 ### Example 4
 

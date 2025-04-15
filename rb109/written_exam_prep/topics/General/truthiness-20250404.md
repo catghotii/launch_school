@@ -90,12 +90,12 @@ puts "Truthy!" if num  # Outputs: Truthy!
 2. **Assignment in conditionals**​: One of the most dangerous pitfalls is accidental assignment in conditionals:
   
 ```ruby
-   # MISTAKE: Using = (assignment) instead of == (comparison)  
-   if some_variable = 2  # This ASSIGNS 2 to some_variable  
-     puts "some_variable is 2"  
-   else  
-     puts "some_variable is not 2"  
-   end  
+# MISTAKE: Using = (assignment) instead of == (comparison)  
+if some_variable = 2  # This ASSIGNS 2 to some_variable  
+ puts "some_variable is 2"  
+else  
+ puts "some_variable is not 2"  
+end  
 ```
 
 This will always output "some_variable is 2" because the assignment `some_variable = 2` returns 2, which is truthy.
@@ -177,5 +177,80 @@ Truthiness differs from the boolean objects `true` and `false` whose sole purpos
 
 This allows for writing simpler conditional expressions; checking if a variable has a value; method return values; and short-circuit evaluation.
 
-### Examples
+## Summary 20250415
 
+In Ruby, everything is considered truthy except for the two falsy values, `false` and `nil`. Truthy values include empty strings, arrays, hashes and the integer `0`; in other programming languages, these objects may be considered falsy.
+
+Truthiness refers to how a value is evaluated in conditional contexts, like if statements. In other words, truthiness refers to whether a value is considered true ("truthy") or considered false ("falsy"). It differs from the boolean objects `true` and `false`, whose only purpose is to convey `true` or `false`.
+
+In conditional contexts, expressions are evaluated based on their truthiness: Ruby does not specifically check for whether the expression evaluates to `true` but rather if it doesn't evaluate to one of the falsy values (`false` or `nil`).
+
+
+Example 1: checking if a value exists
+
+```ruby
+def display_greeting(name)
+  if name # using truthiness instead of != nil
+    puts "Hello, #{name}!"
+  else
+    puts "No name provided."
+  end
+end
+
+display_greeting("Ruby")
+display_greeting(nil)
+```
+
+Example 2: using truthiness in method calls
+
+```ruby
+def create_address(id)
+  id < 0 ? "#{id}@mail.com" : nil
+end
+
+user_id = 69
+if user = create_address(user_id) # assignment in conditional
+  puts "Address created: #{user}"
+else
+  puts "Cannot create address"
+end
+```
+
+Example 3: short-circuit evaluation
+
+- When using `&&` and `||`, the return value is always the value of the operand evaluated last. They can return truthy values too.
+
+```ruby
+def process_data(data)
+  # only process if data exists and has elements
+  if data && data.size > 0
+    puts "Processing #{data.size} elements..."
+    true
+  else
+    puts "No data to process."
+    false
+  end
+end
+
+process_data(['cat', 'dog', 'pig'])
+process_data([])
+process_data(nil)
+```
+
+Example 3: be careful with variable assignments in conditionals!
+
+```ruby
+# assignment in conditional (could be a mistake!)
+if number = 2
+  puts "`number = 2` returns 2 which is always truthy"
+else
+  puts "you will never see this"
+end
+
+# == comparison operator used instead
+if number == 1
+  puts "you will not see this because number was assigned to 2!"
+else
+  puts "now you'll see this"
+end
+```

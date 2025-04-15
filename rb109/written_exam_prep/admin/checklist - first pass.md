@@ -8,12 +8,12 @@ Variables:
 
 Methods:
 - [x] Method definition vs. method invocation
-- [ ] Passing and using blocks with methods
+- [x] Passing and using blocks with methods
 - [x] Parameters vs. arguments
 - [x] Default parameters
-- [ ] Implicit vs. explicit return values
+- [x] Implicit vs. explicit return values
 - [x] Mutating vs. non-mutating methods
-- [ ] Using method return values as arguments to other methods
+- [x] Using method return values as arguments to other methods
 
 General:
 - [x] Mutable vs. immutable data types

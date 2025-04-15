@@ -1,14 +1,3 @@
-Hello! Hope it's okay to ask this here, apologies for it being a long one! Prepping for the RB109 written test and encountered a tricky question. Can anyone help clarify how/when the `select` method return array is built if the block has a mutating operation inside of it?
-
-After a bit of back and forth with LSBot (and coming out of it with a better understanding of what happens when `select` is called, as well as a practical example of why it's advised not to modify collections during iteration), I think my explanation is accurate enough. But I'm still unsure why implementation of the `select` method would be different, particularly at what point during execution the return array is built.
-
-To me, it seems that the return array in LSBot's explanation consists of the elements for which the block returns a truthy value, suggesting that `select` is still iterating over the original array object or "remembers" the original array and the elements at each position where the block returns a truthy value — is the return array being built with each successive iteration, or after all iterations?
-
-Meanwhile, when I run this code through irb, the return array consists of the elements at 'truthily' evaluated positions in the modified array, based on the modified array's indexing of elements. I ran this code with another `arr` object which suggests that a return array is being populated at the end of each iteration that evaluates as truthy. I've included this code at the bottom!
-
-Thanks in advance!
-
----
 
 What will the following code output and why? Please explain step-by-step.
 
@@ -20,6 +9,8 @@ end
 p arr
 p new_arr
 ```
+
+---
 
 My irb's output:
 

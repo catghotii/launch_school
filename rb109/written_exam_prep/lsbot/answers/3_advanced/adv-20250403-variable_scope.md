@@ -1,4 +1,5 @@
-# 4. Advanced: Explain what the concept of "variable scope" means in Ruby. Illustrate your explanation with examples of local variable scope within methods, blocks, and conditionals.
+
+4. Advanced: Explain what the concept of "variable scope" means in Ruby. Illustrate your explanation with examples of local variable scope within methods, blocks, and conditionals.
 
 Variable scope refers to where a variable is accessible in a program. "Local" pertains to the fact that variables may have a limited scope i.e. they are only visible in limited parts of the program.
 

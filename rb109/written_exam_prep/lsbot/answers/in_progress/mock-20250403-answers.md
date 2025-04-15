@@ -9,40 +9,36 @@ What is the difference between puts and return in Ruby? Provide an example that 
 
 Examine the following code and explain what happens on each line and the return value of the example method:
 
-```
-# ruby
+```ruby
+def example(str)
+ i = 3
+ loop do
+   str = str.upcase
+   i -= 1
+   break if i == 0
+ end
+ str + "!"
+end
 
-   def example(str)
-     i = 3
-     loop do
-       str = str.upcase
-       i -= 1
-       break if i == 0
-     end
-     str + "!"
-   end
-   
-   result = example("hello")
-   puts result
+result = example("hello")
+puts result
 ```
 
 ### 3.  ​Intermediate​:
 
 What does the following code output? Explain why:
 
-```
-# ruby
+```ruby
+arr = [1, 2, 3, 4, 5]
+new_arr = arr.map do |num|
+ if num > 3
+   puts num
+ else
+   num * 2
+ end
+end
 
-   arr = [1, 2, 3, 4, 5]
-   new_arr = arr.map do |num|
-     if num > 3
-       puts num
-     else
-       num * 2
-     end
-   end
-   
-   p new_arr
+p new_arr
 ```
  
 ### 4.  ​Advanced​:

@@ -125,7 +125,7 @@ Create a simple mad-lib program that prompts for a noun, a verb, an adjective, a
 
 Example
 
-```ruby
+```
 Enter a noun: dog
 Enter a verb: walk
 Enter an adjective: blue

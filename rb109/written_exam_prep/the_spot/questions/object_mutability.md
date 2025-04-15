@@ -6,7 +6,16 @@
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
-def fix(value)  value.upcase!  value.concat('!')  valueends = 'hello't = fix(s)
+```ruby
+def fix(value)
+  value.upcase!
+  value.concat('!')
+  value
+end
+
+s = 'hello'
+t = fix(s)
+```
 
 What values do `s` and `t` have? Why?
 
@@ -14,7 +23,15 @@ What values do `s` and `t` have? Why?
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
-def fix(value)  value = value.upcase  value.concat('!')ends = 'hello't = fix(s)
+```ruby
+def fix(value)
+  value = value.upcase
+  value.concat('!')
+end
+
+s = 'hello'
+t = fix(s)
+```
 
 What values do `s` and `t` have? Why?
 
@@ -22,7 +39,16 @@ What values do `s` and `t` have? Why?
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
-def fix(value)  value << 'xyz'  value = value.upcase  value.concat('!')ends = 'hello't = fix(s)
+```ruby
+def fix(value)
+  value << 'xyz'
+  value = value.upcase
+  value.concat('!')
+end
+
+s = 'hello'
+t = fix(s)
+```
 
 What values do `s` and `t` have? Why?
 
@@ -30,7 +56,15 @@ What values do `s` and `t` have? Why?
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
-def fix(value)  value = value.upcase!  value.concat('!')ends = 'hello't = fix(s)
+```ruby
+def fix(value)
+  value = value.upcase!
+  value.concat('!')
+end
+
+s = 'hello'
+t = fix(s)
+```
 
 What values do `s` and `t` have? Why?
 
@@ -38,7 +72,15 @@ What values do `s` and `t` have? Why?
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
-def fix(value) value[1] = 'x' value ends = 'abc't = fix(s)
+```ruby
+def fix(value)
+  value[1] = 'x'
+  value
+end
+
+s = 'abc'
+t = fix(s)
+```
 
 What values do `s` and `t` have? Why?
 
@@ -46,28 +88,60 @@ What values do `s` and `t` have? Why?
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
-def a_method(string)  string << ' world'enda = 'hello'a_method(a)
+```ruby
+def a_method(string)
+  string << ' world'
+end
+
+a = 'hello'
+a_method(a)
 
 p a
+```
 
 ### Example 7
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
-arrnum = 3num = 2 * num
+```ruby
+arr #?
+num = 3
+num = 2 * num
+```
 
 ### Example 8
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
-a = %w(a b c)a[1] = '-'p a
+```ruby
+a = %w(a b c)
+a[1] = '-'
+
+p a
+```
 
 ### Example 9
 
 [Link to page with #9 & #10](https://launchschool.com/lessons/a0f3cd44/assignments/4b1ad598)
 
-def add_name(arr, name)  arr = arr + [name]endnames = ['bob', 'kim']add_name(names, 'jim')puts names
+```ruby
+def add_name(arr, name)
+  arr = arr + [name]
+end
+
+names = ['bob', 'kim']
+add_name(names, 'jim')
+puts names
+```
 
 ### Example 10
 
-def add_name(arr, name)  arr = arr << nameendnames = ['bob', 'kim']add_name(names, 'jim')puts names
+```ruby
+def add_name(arr, name)
+  arr = arr << name
+end
+
+names = ['bob', 'kim']
+add_name(names, 'jim')
+puts names
+```

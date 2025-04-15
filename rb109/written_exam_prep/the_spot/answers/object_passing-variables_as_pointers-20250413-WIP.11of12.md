@@ -451,17 +451,49 @@ arr[1] = 5
 arr
 ```
 
+On the first two lines, variables `a` and `b` are initialised with references to two different array objects, `[1, 3]` and `[2]`, respectively. On line 3, `arr` is initialised with a reference to a nested array containing the arrays referenced by `a` and `b`—this evaluates to `[[1,3], [2]]`.
+
+`arr[1] = 5` is evaluated: `Array#[]=` is a setter method that (re)assigns an object to the the element at the index specified by the argument—the element at index 1, which is `[2]`, is replaced by the integer `5`. While arrays are mutable objects and setter methods can modify the elements in the array, it's important to note that reassignment of an element is occurring, not a mutation of the element itself. (`b` still references the original array element `[2]`.)
+
+On the last line, `arr` returns the modified array, which is `[[1, 3], 5]`.
+
+(From LSBot:)
+
+This code demonstrates several important concepts:1.  Variables as references to objects  
+2.  Element assignment in arrays using the `Array#[]=` method  
+3.  The distinction between modifying an element in an array versus replacing it entirely  
+4.  How element assignment affects nested arrays without changing the original objects (`b` still references `[2]` even though `arr` no longer contains that array)
+
+
 ### Example 12
 
 [Link to example](https://launchschool.com/lessons/c53f2250/assignments/1a6a2665)
 
 ```ruby
 arr1 = ["a", "b", "c"]
+arr2 = arr1.dup
 
-arr2 = arr1.duparr2.map! do |char|
+arr2.map! do |char|
   char.upcase
 end
 
 puts arr1
 puts arr2
+```
+
+The variable `arr1` is initialised with a reference to the array object `["a", "b", "c"]`, and the variable `arr2` is initialised with a reference to the duplicated array resulting from the `dup` method called on `arr1`. The `dup` method duplicates the values of that object it's called on, with the important distinction that it does not copy the reference. Thus `arr1` and `arr2` point to different array objects; even though the arrays appear to look the same, the objects are held in different address spaces in memory (this can be shown by calling `object_id` on the arrays).
+
+The destructive `map!` method is called on `arr2` and passed a block. In each iteration, the block parameter `char` is assigned the current element of the array and then evaluates `char.upcase`, which returns a new string with uppercase characters. The block's return value is the result of the last evaluated expression, which is the transformed all capitals string. The `map!` method replaces the element with the block's return value, so the array referenced by `arr2` is now `["A", "B", "C"]`.
+
+The `puts arr1` and `puts arr2` method calls will output the elements of each array in a newline and with the quotes removed. (The return value of this code is the value of the last evaluated expression, which is `nil` because `puts` returns `nil`.) The output shows that `arr1` and `arr2` do not reference the same array object: `dup` only returned a shallow copy of the array object it was called on (not the references to the object(s)), and  the mutating method `map!` modified `arr2` only.
+
+The output is:
+
+```
+a
+b
+c
+A
+B
+C
 ```

@@ -13,26 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "admin/checklist - first pass.md",
+                "file": "code explanations - exemplar/wow i wrote that.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "checklist - first pass"
-            }
-          },
-          {
-            "id": "f2cd8645fd8cb245",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "brain dump/brain_dump-20250414.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "brain_dump-20250414"
+              "title": "wow i wrote that"
             }
           },
           {
@@ -48,37 +34,8 @@
               "icon": "lucide-file",
               "title": "mutating_vs_nonmutating_methods"
             }
-          },
-          {
-            "id": "a06e68ce2147b5cf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "brain dump/brain_dump-20250414.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "brain_dump-20250414"
-            }
-          },
-          {
-            "id": "ad5a9e2b8c2151d2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "topics/Methods/mutating_vs_nonmutating_methods.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "mutating_vs_nonmutating_methods"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -199,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "brain dump/brain_dump-20250414.md",
+                "file": "code explanations - exemplar/wow i wrote that.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of brain_dump-20250414"
+              "title": "Outline of wow i wrote that"
             }
           }
         ],
@@ -225,43 +182,43 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f2cd8645fd8cb245",
+  "active": "2568341f79919d0b",
   "lastOpenFiles": [
-    "admin/checklist - first pass.md",
-    "admin/checklist - second pass.md",
-    "admin/examples?.md",
-    "topics/Methods/mutating_vs_nonmutating_methods.md",
+    "lsbot/answers/0_all/mock-20250415.md",
+    "lsbot/answers/in_progress/mock-20250403-answers.md",
+    "lsbot/answers/2_intermediate/int-20250408-method_args.md",
+    "lsbot/answers/2_intermediate/int-20250403_01-method_return.md",
+    "lsbot/answers/2_intermediate/int-20250403_02-iteration_map.md",
+    "lsbot/answers/2_intermediate/int-20250415-variable_scope-method_return.md",
+    "lsbot/answers/3_advanced/adv-20250415-variable_scope-block-var_shadowing.md",
+    "lsbot/answers/3_advanced/adv-20250403-variable_scope.md",
+    "lsbot/answers/3_advanced/adv-20250408-iteration_each.md",
+    "lsbot/answers/3_advanced/adv-20250408-select_mutating_method.md",
+    "code explanations - exemplar/wow i wrote that.md",
+    "code explanations - exemplar",
+    "topics/General/mutable_vs_immutable_data_types-20250414.md",
+    "topics/General/truthiness-20250404.md",
+    "lsbot/answers/1_basic/bas-20250415-iterations-select.md",
+    "the_spot/questions/each_map_select.md",
+    "the_spot/questions/local_variable_scope.md",
+    "the_spot/questions/other_collection_methods.md",
+    "the_spot/in_progress/truthiness-20250415.md",
+    "topics/General/output_vs_return-20250403.md",
+    "the_spot/questions/truthiness.md",
+    "the_spot/in_progress/object_mutability-20250415.md",
+    "the_spot/questions/object_mutability.md",
+    "the_spot/in_progress/local_variable_scope-20250414.md",
+    "the_spot/answers/variable_shadowing-20250413.md",
+    "the_spot/answers/each_map_select-20250413.md",
+    "the_spot/answers/object_passing-variables_as_pointers-20250413-WIP.11of12.md",
+    "exercises/small_problems/answers/Untitled",
+    "exercises/small_problems/answers",
+    "exercises/small_problems/questions",
+    "exercises/small_problems",
+    "other_exercises/codewars.rb",
     "examples/final",
     "examples/collected",
     "examples",
-    "brain dump/brain_dump-20250414.md",
-    "exercises/ruby_basics/answers/variable_scope-20250414.md",
-    "topics/General/pass_by_value_vs_pass_by_reference-20250408.md",
-    "exercises/small_problems/questions/documentation_again.md",
-    "exercises/small_problems/codes",
-    "exercises/small_problems/questions/easy_3.md",
-    "exercises/small_problems/questions/easy_2.md",
-    "exercises/small_problems",
-    "exercises/small_problems/questions/easy_1.md",
-    "the_spot/in_progress/each_map_select-20250414.md",
-    "the_spot/in_progress/local_variable_scope-20250414.md",
-    "topics/Methods/passing_and_using_blocks_with_methods.md",
-    "topics/General/output_vs_return-20250403.md",
-    "topics/General/truthiness-20250404.md",
-    "topics/General/mutable_vs_immutable_data_types-20250414.md",
-    "the_spot/in_progress/object_passing-variables_as_pointers-20250413-WIP.11of12.md",
-    "topics/other concepts/blog-mutating_nonmutating_methods.md",
-    "topics/other concepts/blog-variable_references-mutability.md",
-    "the_spot/in_progress",
-    "topics/other concepts/lsbot-variable isolation.md",
-    "topics/other concepts/blog-object_passing.md",
-    "topics/Methods/method_def_vs_invocation-20250408.md",
-    "topics/Methods/implicit_vs_explict_return_values.md",
-    "topics/Methods/parameters_vs_arguments-20250408.md",
-    "topics/Methods/using_method_return_values_as_arguments.md",
-    "brain dump",
-    "lsbot/answers/in_progress",
-    "lsbot/questions",
-    "lsbot/answers/0_all"
+    "exercises/rb109-small_problems/codes"
   ]
 }
