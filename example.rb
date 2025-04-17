@@ -1,9 +1,9 @@
-a = 7
-array = [1, 2, 3]
+val = 1
 
-array.each do |a|
-  a += 1
-  puts a
+arr = [1, 2, 3].map do |val|
+  puts val
+  val += 1
 end
 
-puts a
+puts val
+p arr

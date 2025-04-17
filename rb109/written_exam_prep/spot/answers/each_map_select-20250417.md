@@ -164,7 +164,12 @@ The output is:
 This code demonstrates:
 - iterating over collections using `map` for transformation: it returns a new array based on the return values of the block, containing these return values in the array
 
-### Example 6
+### Example 6-20250417
+
+```
+12:03
+12:06
+```
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -174,7 +179,27 @@ arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 arr.each { |n| puts n }
 ```
 
-### Example 7
+The `each` method is called on `arr`, which executes the block code for each iteration, and returns the original calling collection. Inside the block, the parameter `n` is assigned the value of the current element, and then `puts n` outputs this value. The return value of the block is `nil` because `puts` returns `nil` (the block's return values are not used by `each`). `each` then returns the original collection `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`, which is also the return value of the code snippet as this is the evaluated result of the last expression in the code.
+
+The output is:
+
+```
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+```
+
+### Example 7-20250417
+
+1208
+1213
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -188,7 +213,19 @@ end
 p incremented
 ```
 
-### Example 8
+The variable `arr` is initialised with a reference to the array object `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`.
+
+The variable `incremented` is initialised with a reference to the return value of `map` called on `arr`, which executes the block code in each iteration, and then returns a new array containing the return values of the block. In each iteration, the block parameter `n` is assigned the value of the current element, and then `n + 1` evaluates to the result of incrementing the value of `n` by `1`. This evaluated result is the same as the block's return value since it is also the evaluated result of the last expression in the block. `map` returns a new array containing all the return values of the block, and this array object is then stored in the variable `incremented`.
+
+`p incremented` outputs a "raw" representation of the return array object in a single line and makes the square brackets visible. (The return value of the entire code snippet is the same as the evaluated result of the last line in the code—`p` returns `nil`, so the return value is `nil`.)
+
+The output is:
+
+```
+[2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+```
+
+### Example 8-20250417
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -202,7 +239,22 @@ end
 p new_array
 ```
 
-### Example 9
+The variable `new_array` is initialised with a reference to the return value of the `map` method called on `arr`, which executes the block for each iteration, and then returns a new array containing the return values from the block. This return array is then assigned to `new_array`.
+
+In each iteration, the block parameter `n` is assigned the value of the current element, and `n > 1` is evaluated: this is a conditional expression that returns either boolean objects `true` or `false`, and this evaluated result is the subsequent return value of the block, as it is also the evaluated result of the last expression in the block.
+
+For the first iteration, `n > 1` evaluates as `false`, so the block's return value is also `false`, while all subsequent iterations evaluate as `true`. `map` returns a new array whose elements correspond to to these boolean values that are returned by the block.
+
+`p new_array` outputs the new array:
+
+```
+[false, true, true, true, true, true, true, true, true, true]
+```
+
+### Example 9-20250417
+
+2042
+2048
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -217,7 +269,20 @@ end
 p new_array
 ```
 
-### Example 10
+`new_array` is initialised with a reference to the return value of `map`. Unlike each, which executes the block code for each iteration and returns the original collection, `map` returns a new array containing elements returned from the block.
+
+In each iteration, the block parameter `n` is assigned to the value of the current element and then the block code is executed: `n > 1` is a comparison statement that evaluates to either boolean object `true` or `false` (but this return value is not used in this code), and `puts n` outputs the value of the element and also returns `nil` (since `puts` returns `nil`). The return value of the block is the same as the result of the last evaluated expression in the block `puts n`—the block's return value is `nil`. The `map` method returns a new array whose elements correspond to the return values of the block, and this array is assigned to `new_array`.
+
+`p new_array` outputs the return array:
+
+```
+[nil, nil, nil, nil, nil, nil, nil, nil, nil, nil]
+```
+
+### Example 10-20250417
+
+2050
+2055
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -227,7 +292,18 @@ a = "hello"
 [1, 2, 3].map { |num| a }
 ```
 
-### Example 11
+The variable `a` is initialised with a reference to the string object `"hello"`.
+
+The `map` method is called on an array `[1, 2, 3]`, which iterates over the collection and returns a block containing the return values from the block (unlike `each` which returns the original collection).
+
+Inside the block, the block parameter `num` is assigned to the value of the current element, and then the block evaluates `a`, which evaluates to `"hello"`. This is because the block has access to variables initialised in its surrounding scope, so `a` can be evaluated from within the block. The return value of the block is the same result as the last evaluated expression in the block, `"hello"`.
+
+`map` returns an array whose elements correspond to the block's return value, effectively transforming the  elements of the original array to the return values by the block—the return array is `["hello", "hello", "hello"]`. However, in this specific code, this new array is not used, nor is there any output.
+
+### Example 11-20250417
+
+2056
+2058
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -235,4 +311,14 @@ What does the following code return? What does it output? Why? What concept does
 [1, 2, 3].each do |num|
   puts num
 end
+```
+
+The `each` method is called on the array `[1, 2, 3]`, which iterates over the collection, and returns the original collection. In each iteration of the block, the block parameter `num` is assigned to the value of the current element, and then `puts num` outputs the element and evaluates to `nil`, since `puts` returns `nil`. `each` then returns the original collection, `[1, 2, 3]` (which is also the return value of this code snippet, as it is the evaluated result of the last expression in the code).
+
+The output is:
+
+```
+1
+2
+3
 ```

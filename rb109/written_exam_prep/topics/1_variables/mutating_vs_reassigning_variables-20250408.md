@@ -50,6 +50,7 @@ The semantics of references and (re)assignment have important implications for h
 •   Multiple variables reference the same object and should all see the change  
 •   Working with collections that need to be gradually built or modified**Code Examples****Example 1: Reassignment vs. Mutation with Strings**
 
+```
 # ruby
 
 # Reassignment
@@ -61,9 +62,11 @@ puts name          # => "john doe"
 name = "john"
 name << " doe"     # Mutation - same string object modified in place
 puts name          # => "john doe"
+```
 
 **Example 2: Multiple References and Mutation**
 
+```
 # ruby
 
 # Reassignment doesn't affect other references
@@ -79,6 +82,7 @@ b = a
 a << " world"   # Mutation - affects the object that both a and b reference
 puts a          # => "hello world"
 puts b          # => "hello world"
+```
 
 **Common Pitfalls and Misconceptions**1.  ​**Confusing reassignment with mutation**​:<!---->
 

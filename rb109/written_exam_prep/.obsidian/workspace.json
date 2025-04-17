@@ -11,10 +11,14 @@
             "id": "e11c33ddd614babe",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "topics/!ALL_WITH_EXAMPLES/everything! all of it!.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "everything! all of it!"
             }
           }
         ]
@@ -138,12 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "topics/!ALL_WITH_EXAMPLES/everything! all of it!.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of everything! all of it!"
             }
           }
         ],
@@ -163,35 +168,75 @@
       "command-palette:Open command palette": false
     }
   },
+  "floating": {
+    "id": "5d412e9d6f7fde08",
+    "type": "floating",
+    "children": [
+      {
+        "id": "0c9989d59ae04c5b",
+        "type": "window",
+        "children": [
+          {
+            "id": "b0906b782d6fbedb",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "201afedac8f78de2",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "topics/!ALL_WITH_EXAMPLES/everything! all of it!.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "everything! all of it!"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 404,
+        "y": 128,
+        "width": 1024,
+        "height": 800,
+        "maximize": false,
+        "zoom": -0.5
+      }
+    ]
+  },
   "active": "e11c33ddd614babe",
   "lastOpenFiles": [
-    "spot/in_progress/each_map_select-20250414.md",
-    "spot/questions/each_map_select.md",
-    "lsbot/new/int-20250408-pass_by_ref_val.md",
-    "lsbot/new/adv-20250408_02-explain_code.md",
-    "lsbot/new/mock-20250408-advanced.md",
-    "lsbot/answers/in_progress/mock-20250403-answers.md",
-    "lsbot/answers/3_advanced/adv-20250408-mutating_vs_nonmutating_methods.md",
-    "brain dump/more!concepts!.md",
-    "lsbot/answers/3_advanced/adv-20250408_03-variable_scope.md",
-    "topics/3_general/output_vs_return.md",
-    "brain dump/brain_dump-20250416.md",
-    "spot/in_progress/object_mutability-20250415.md",
-    "spot/in_progress/other_collection_methods 1.md",
-    "spot/questions/other_collection_methods.md",
-    "admin/checklist - first pass.md",
-    "lsbot/answers/0_all/mock-20250416.md",
-    "lsbot/answers/0_all/mock-20250415.md",
-    "spot/answers/each_map_select-20250413.md",
+    "topics/!ALL_WITH_EXAMPLES/everything! all of it! 1.md",
+    "topics/!ALL_WITH_EXAMPLES/everything! all of it!.md",
+    "topics/1_variables/variable_shadowing-20250403.md",
+    "topics/1_variables/variables_as_pointers-20250408.md",
     "spot/answers/local_variable_scope-20250409.md",
-    "spot/answers/object_passing-variables_as_pointers-20250413-WIP.11of12.md",
-    "spot/answers/truthiness-20250415.md",
-    "spot/in_progress/local_variable_scope-20250414.md",
-    "spot/questions/object_passing-variables_as_pointers.md",
-    "brain dump/brain_dump-20250415.md",
-    "study_guide/notes/Beginning Ruby series.md",
+    "topics/1_variables/local_variable_scope_blocks-20250403.md",
+    "spot/answers/each_map_select-20250417.md",
+    "spot/questions/each_map_select.md",
+    "spot/questions/object_mutability.md",
+    "topics/other concepts/blog-variable_references-mutability.md",
+    "topics/other concepts/lsbot-variable isolation.md",
+    "topics/2_methods/method_def_vs_invocation-20250408.md",
+    "topics/2_methods/implicit_vs_explict_return_values.md",
+    "topics/2_methods/mutating_vs_nonmutating_methods.md",
+    "topics/2_methods/default_parameters-20250403.md",
+    "topics/2_methods/parameters_vs_arguments-20250408.md",
+    "topics/3_general/mutable_vs_immutable_data_types-20250414.md",
+    "topics/1_variables/mutating_vs_reassigning_variables-20250408.md",
+    "topics/everything so far.md",
+    "spot/_more/Assorted Questions from RB101-130 (mostly 101).md",
+    "spot/_more",
+    "spot/in_progress/object_mutability-20250415.md",
+    "spot/answers/each_map_select-20250413.md",
+    "brain dump/brain_dump-20250417.md",
+    "brain dump/brain_dump-20250416.md",
+    "brain dump/more!concepts!.md",
+    "lsbot/new/int-20250408-pass_by_ref_val.md",
     "study_guide/notes",
-    "exercises/ruby_basics/in progress/return-20250416.md",
     "exercises/ruby_basics/in progress",
     "example.rb",
     "code explanations - exemplar",
@@ -199,7 +244,6 @@
     "exercises/small_problems/answers",
     "exercises/small_problems/questions",
     "exercises/small_problems",
-    "other_exercises/codewars.rb",
-    "examples/final"
+    "other_exercises/codewars.rb"
   ]
 }
