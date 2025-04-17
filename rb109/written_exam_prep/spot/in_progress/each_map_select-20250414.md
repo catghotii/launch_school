@@ -92,7 +92,7 @@ This code demonstrates:
 - return vs output (via `p`)
 - truthiness of expressions in Ruby: every expression is considered truthy except for the two falsy values `false` and `nil`
 
-### Example 4
+### Example 4-20250416
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -107,7 +107,33 @@ end
 p new_array
 ```
 
-### Example 5
+`new_array` is initialised with a reference to the return value of `select` called on the array object referenced by `arr`. Unlike `each`, which returns the original calling object, the `select` method returns a new array containing the elements for which the block returns a truthy value. (`select` first creates an empty array `[]` which is then populates with elements based on the truthiness of the block's return value: if the return value of is evaluated as true, then the original element is added to the return array.)
+
+Inside the block, the block parameter `n` is assigned to the element for that iteration, and then `n + 1` is evaluated, which increments the value of `n` by `1` and returns that evaluated result (although this operation does not change the value of `n` because it is not an assignment operation). The next line, `puts n` is then evaluated, which outputs the value of `n` (which remains the value of the original element) and returns `nil` (since `puts` returns `nil`). This `nil` value is also the same as the block's return value (which is the last evaluated expression in the block). `select` then checks the truthiness of the block's return value to determine whether the element should be added to the return array: `nil` evaluates as falsy, so nothing happens to the array. On each iteration, the falsy value `nil` is returned by the block, so the returned array remains `[]` throughout execution of the `select` method. This empty return array is the return value of the `select` method—which is also the value that `new_array` now references.
+
+`p new_array` outputs a "raw" representation of the return array, including square brackets.
+
+The output is:
+
+```
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+[]
+```
+
+#### LSBot
+
+2.  You correctly identified that `n + 1` does not modify `n` - it simply returns a new value that isn't stored anywhere.
+
+### Example 5-20250416
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -120,6 +146,23 @@ end
 
 p new_array
 ```
+
+`new_array` is initialised with a reference to the return value of the `map` method called on `words`. Unlike `each`, which executes the block code for each iteration and returns the original calling object, `map` returns a new array containing the returned values from the block.
+
+Inside the block, the block parameter `word` is assigned the value of the current element, starting at index 0. The predicate method `start_with?` is called on the element value which checks whether the string starts with the given argument string `"t"` and returns either boolean object `true` or `false`. The return value of the block is the same as the result of the last evaluated expression in the block, which would be either `true` or `false`. The return array by `map` contains the block's return values; `new_array` references this new return array.
+
+For the string elements starting with `"t"`—`"trip"` and `"talk"`—the `start_with?` method returns `true` which is the subsequent return value of the block, and for the other elements, the return value is `false`. 
+
+`p new_array` outputs the return array in a single line, including square brackets.
+
+The output is:
+
+```
+[false, true, false, false, true]
+```
+
+This code demonstrates:
+- iterating over collections using `map` for transformation: it returns a new array based on the return values of the block, containing these return values in the array
 
 ### Example 6
 

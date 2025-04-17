@@ -1,5 +1,5 @@
 
-**Variables:**
+**Variables**
 
 - [ ] Variables as pointers
 - [ ] Variable shadowing
@@ -8,7 +8,7 @@
 - [ ] Scope of constants
 - [ ] Mutating values vs. reassigning variables
 
-**Methods:**
+**Methods**
 
 - [ ] Method definition vs. method invocation
 - [ ] Passing and using blocks with methods
@@ -18,9 +18,19 @@
 - [ ] Mutating vs. non-mutating methods
 - [ ] Using method return values as arguments to other methods
 
-**General:**
+**General**
 
 - [ ] Mutable vs. immutable data types
 - [ ] Output vs. return
 - [ ] Pass-by-reference vs. pass-by-value
+- [ ] Truthiness
+
+**SPOT questions**
+
+- [ ] Local variable scope
+- [ ] Variable shadowing
+- [ ] Object passing / variables as pointers
+- [ ] Object mutability / mutating methods
+- [ ] each, map, select
+- [ ] Other collection methods
 - [ ] Truthiness

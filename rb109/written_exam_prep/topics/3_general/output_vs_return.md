@@ -1,3 +1,5 @@
+
+## 20250403
 ### first go, brain only!
 
 When evaluating any expression in Ruby, it's important to consider what the expression is returning and what it might output to the console display. Some expressions will provide both an output and return value, while others may only return a value.
@@ -144,3 +146,41 @@ The key differences between output and return in methods:
 - A method will always return something (at minimum `nil`), while it may not necessarily have an output
 
 In practice, it's advised that methods should focus on either returning a meaningful value, which could be used further in the program in other operations or variable assignments, or displaying output to the console, but not both (methods that produce output can be denoted in the method name with prefixes such "display" or "print" for easy identification of a method's purpose).
+
+## 20250416
+
+### brain only
+
+Every expression in Ruby can be evaluated and it also returns some value.  A method's return value is the same as the evaluated result of the last expression in the method body, unless an explicit `return` keyword is executed prior to the last line (any lines written after `return` in the method body will be ignored).
+
+Output is a side effect of a printing method that displays information to the user, but it does not affect the return value.
+
+```ruby
+# method outputs string and returns nil
+
+def greeting(name)
+  puts "Hello, #{name}!"
+end
+
+my_greeting = greeting("Cat")
+p my_greeting
+
+# method returns string
+
+def greeting(name)
+  "Hello, #{name}!"
+end
+
+my_greeting = greeting("Cat")
+p my_greeting
+
+# method outputs string and returns string value
+
+def greeting(name)
+  puts "Hi, #{name}!"
+  "Hello, #{name}!"
+end
+
+my_greeting = greeting("Cat")
+puts my_greeting
+```

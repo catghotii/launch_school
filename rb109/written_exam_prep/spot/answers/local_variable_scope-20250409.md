@@ -293,6 +293,7 @@ The `puts` method calls demonstrate variable scoping rules of a block:
 - `puts var` will throw a NameError message, since variables initialised inside a block cannot be accessed or modified in the outer scope
 
 The output is:
+
 ```
 cat
 # NameError message

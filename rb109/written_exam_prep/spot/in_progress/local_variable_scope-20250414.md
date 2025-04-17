@@ -87,7 +87,13 @@ This code demonstrates:
 - reassignment of variables from within a block
 - assignment of one variable to another: the variable on the left of the assignment operator receives a copy of the reference that the variable on the right references
 
-### Example 4
+### Example 4-20250416
+
+```
+start 17 13
+end   17:28
+total 00:15
+```
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -103,6 +109,38 @@ end
 
 example('hello')
 ```
+
+The `example` method is called and passed the string `'hello'` as an argument.
+
+Inside the method definition, the local variable `str` is bound to the `'hello'` string—the method parameter receives a reference to this string value. The variable `i` is initialised with a reference to the integer `3`, and `loop` is called with a block, which will execute the block code until it reaches a `break` (or `return`) statement.
+
+In each iteration of the block, `puts str` outputs the value of `str`, and then `i` is decremented by `1` (the block can access and modify variables in its surrounding scope). The conditional expression `break if i == 0` is evaluated: if it evaluates as true, `break` is executed, which terminates the `loop` method (and `loop` returns `nil`, since `break` statements return `nil`), otherwise if it evaluates as false, execution continues from the next iteration of the block.
+
+Line by line, it looks like this:
+
+- On the first iteration, `puts str` outputs `'hello'`, `i -= 1` is evaluated, resulting in the reassignment of `i` to reference integer `2`, and then the condition fails because `if` statement evaluates as false
+- On the second iteration, `puts str` outputs `'hello'` again, `i` is reassigned to `1`, and `if` statement evaluates as false
+- On the third iteration, `puts str` outputs `'hello'`, `i` is reassigned to `0`, and `if` statement evaluates as true since `i == 0`, which executes `break`, and the `loop` method terminates, and execution resumes after `loop`
+
+The return value of the method is the result of the last evaluated expression, which is the return value of the `loop` method, which is the return value of the block, `nil`. The method's return value is not used in this code.
+
+The output is:
+
+```
+hello
+hello
+hello
+```
+
+This code demonstrates:
+- iterating methods like `loop` that execute the block code until a conditional statement is met
+- conditional statements that use truthiness to help build conditional flow
+- return values vs output (via `puts`)
+- variable scope of a block, in particular how blocks can access variables in its surrounding scope
+
+#### LSBot
+
+You also correctly identified that `break` statements return `nil`, which becomes the return value of the `loop` method and subsequently the return value of the `example` method. As shown in exercises like [Runaway Loop](https://launchschool.com/exercises/c07d750e) and [Control the Loop](https://launchschool.com/exercises/a9ce12dc), the `break` statement is essential for controlling loop execution.
 
 ### Example 5
 

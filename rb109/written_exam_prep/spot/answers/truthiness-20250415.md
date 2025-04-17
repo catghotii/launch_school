@@ -28,7 +28,13 @@ This code demonstrates:
 - Truthiness in conditional contexts
 - Return values vs output: the return value is not necessarily the same as the output
 
-### Example 2
+### Example 2-20250416
+
+```
+start 12:00
+end   12:20
+total 00:20
+```
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -44,4 +50,21 @@ if var
 else
   puts "interview"
 end
+```
+
+The variable `var` is initialised with a reference to the return value of the `test` method. Inside the method definition, `puts` outputs `"written assessment"` and returns `nil` (since `puts` returns `nil`)—this falsy value is also the return value of the method (whose implicit return is the result of the last evaluated expression). `var` is assigned to the value of `nil`.
+
+Since `var` references the falsy value `nil` if statement `if var` is evaluated as false, so the `else` branch is executed: `puts "interview"` outputs `"interview"`. The result of the if/else statement demonstrates truthiness, a key concept used to determine conditional flow.
+
+In Ruby, every expression evaluates as truthy, except for the two falsy values `false` and `nil`. In other words, everything in Ruby is considered true (or "truthy"), except for `false` and `nil` which are considered false ("falsy"). Truthiness differs from boolean objects `true` and `false` whose sole purpose is to convey `true` and `false`.
+
+In conditional contexts, instead of using boolean objects directly, Ruby checks for the truthiness of an expression to determine whether a branch should be executed—it does not check specifically for whether the conditional expression evaluates to the boolean `true` object, but rather whether the expression does not evaluate to either of the falsy values.
+
+In this code, the `test` method passes `nil` back to the calling code—`var` references `nil`. Therefore when `if var` is evaluated, Ruby checks for the expression's truthiness: it returns a falsy value and the condition fails, so the else branch is executed instead. The return value of the if statement is the value of the executed branch, `puts "interview"`, which returns `nil`.
+
+Output
+
+```
+written assessment
+interview
 ```
