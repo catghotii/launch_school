@@ -4,21 +4,55 @@
     "type": "split",
     "children": [
       {
-        "id": "795e4a355af7e8fe",
+        "id": "1123bf8321d87300",
         "type": "tabs",
         "children": [
           {
-            "id": "e11c33ddd614babe",
+            "id": "1f5a9c369a9c817c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "topics/!ALL_WITH_EXAMPLES/everything! all of it!.md",
+                "file": "topics/!main/prep_notes/everything! all of it!.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "everything! all of it!"
+            }
+          },
+          {
+            "id": "bd946641397d2524",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "topics/other concepts/blog-variable_references-mutability.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "blog-variable_references-mutability"
+            }
+          }
+        ]
+      },
+      {
+        "id": "a9d1a9865c6970a9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e65dd8a3fad67eba",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "topics/%first_pass/2_methods/mutating_vs_nonmutating_methods.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "mutating_vs_nonmutating_methods"
             }
           }
         ]
@@ -53,7 +87,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "place",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -142,7 +176,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "topics/!ALL_WITH_EXAMPLES/everything! all of it!.md",
+                "file": "topics/!main/prep_notes/everything! all of it!.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -168,82 +202,42 @@
       "command-palette:Open command palette": false
     }
   },
-  "floating": {
-    "id": "5d412e9d6f7fde08",
-    "type": "floating",
-    "children": [
-      {
-        "id": "0c9989d59ae04c5b",
-        "type": "window",
-        "children": [
-          {
-            "id": "b0906b782d6fbedb",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "201afedac8f78de2",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "topics/!ALL_WITH_EXAMPLES/everything! all of it!.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "everything! all of it!"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 404,
-        "y": 128,
-        "width": 1024,
-        "height": 800,
-        "maximize": false,
-        "zoom": -0.5
-      }
-    ]
-  },
-  "active": "e11c33ddd614babe",
+  "active": "1f5a9c369a9c817c",
   "lastOpenFiles": [
-    "topics/!ALL_WITH_EXAMPLES/everything! all of it! 1.md",
-    "topics/!ALL_WITH_EXAMPLES/everything! all of it!.md",
-    "topics/1_variables/variable_shadowing-20250403.md",
-    "topics/1_variables/variables_as_pointers-20250408.md",
-    "spot/answers/local_variable_scope-20250409.md",
-    "topics/1_variables/local_variable_scope_blocks-20250403.md",
-    "spot/answers/each_map_select-20250417.md",
-    "spot/questions/each_map_select.md",
-    "spot/questions/object_mutability.md",
-    "topics/other concepts/blog-variable_references-mutability.md",
-    "topics/other concepts/lsbot-variable isolation.md",
-    "topics/2_methods/method_def_vs_invocation-20250408.md",
-    "topics/2_methods/implicit_vs_explict_return_values.md",
-    "topics/2_methods/mutating_vs_nonmutating_methods.md",
-    "topics/2_methods/default_parameters-20250403.md",
-    "topics/2_methods/parameters_vs_arguments-20250408.md",
-    "topics/3_general/mutable_vs_immutable_data_types-20250414.md",
-    "topics/1_variables/mutating_vs_reassigning_variables-20250408.md",
+    "topics/%first_pass/2_methods/mutating_vs_nonmutating_methods.md",
+    "topics/!main/prep_notes/everything! all of it!.md",
+    "everything! all of it!.pdf",
+    "topics/%first_pass/3_general/pass_by_value_vs_pass_by_reference-20250408.md",
+    "topics/%first_pass/2_methods/default_parameters-20250403.md",
     "topics/everything so far.md",
-    "spot/_more/Assorted Questions from RB101-130 (mostly 101).md",
+    "topics/%first_pass/3_general/truthiness-20250404.md",
+    "topics/!main/prep_notes",
+    "topics/%second_pass",
+    "topics/%first_pass",
+    "topics/!main/lsbot_mocks_by_topic/Default parameters-20250418.md",
+    "topics/!main/lsbot_mocks_by_topic",
+    "topics/by_topic",
+    "topics/%first_pass/2_methods/parameters_vs_arguments-20250408.md",
+    "topics/%first_pass/2_methods/method_def_vs_invocation-20250408.md",
+    "spot/answers/object_passing-variables_as_pointers-20250413-WIP.11of12.md",
+    "topics/%first_pass/1_variables/local_variable_scope_method_definitions-20250408.md",
+    "spot/questions/object_passing-variables_as_pointers.md",
+    "topics/other concepts/lsbot-variable isolation.md",
+    "lsbot/answers/3_advanced/adv-20250403-variable_scope.md",
+    "topics/%first_pass/1_variables/local_variable_scope_blocks-20250403.md",
+    "topics/%first_pass/1_variables/scope_of_constants-20250408.md",
+    "topics/%first_pass/1_variables/mutating_vs_reassigning_variables-20250408.md",
+    "topics/%first_pass/3_general/mutable_vs_immutable_data_types-20250414.md",
+    "topics/other concepts/blog-mutating_nonmutating_methods.md",
+    "topics/other concepts/blog-variable_references-mutability.md",
+    "topics/!main/prep_notes/everything! all of it! 1.md",
+    "topics/%first_pass/1_variables/variable_shadowing-20250403.md",
+    "topics/%first_pass/1_variables/variables_as_pointers-20250408.md",
+    "spot/answers/local_variable_scope-20250409.md",
+    "spot/answers/each_map_select-20250417.md",
     "spot/_more",
-    "spot/in_progress/object_mutability-20250415.md",
-    "spot/answers/each_map_select-20250413.md",
-    "brain dump/brain_dump-20250417.md",
-    "brain dump/brain_dump-20250416.md",
-    "brain dump/more!concepts!.md",
-    "lsbot/new/int-20250408-pass_by_ref_val.md",
     "study_guide/notes",
     "exercises/ruby_basics/in progress",
-    "example.rb",
-    "code explanations - exemplar",
-    "exercises/small_problems/answers/Untitled",
-    "exercises/small_problems/answers",
-    "exercises/small_problems/questions",
-    "exercises/small_problems",
-    "other_exercises/codewars.rb"
+    "example.rb"
   ]
 }
