@@ -142,7 +142,15 @@ This code demonstrates:
 
 You also correctly identified that `break` statements return `nil`, which becomes the return value of the `loop` method and subsequently the return value of the `example` method. As shown in exercises like [Runaway Loop](https://launchschool.com/exercises/c07d750e) and [Control the Loop](https://launchschool.com/exercises/a9ce12dc), the `break` statement is essential for controlling loop execution.
 
-### Example 5
+### Example 5-20250422
+
+```
+start 16:26
+end   16:31
+total 00:05
+```
+
+[Problem link](https://launchschool.com/lessons/a0f3cd44/assignments/9e9e907c)
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -156,9 +164,26 @@ word = "Hello"
 greetings(word)
 ```
 
-[Problem link](https://launchschool.com/lessons/a0f3cd44/assignments/9e9e907c)
+The variable `word` is initialised with a reference to the string object `"Hello"`. The method `greetings` is called and passed `word` as an argument.
 
-### Example 6
+Inside the method definition, the parameter `str` is bound to the same string object `"Hello"` that `word` references. The operations within the method definition are executed: `puts str` outputs `"Hello"`, and `puts "Goodbye"` outputs `"Goodbye"`. The method's return value is the same value as the last evaluated expression during execution of the method, which is `nil` because `puts` returns `nil`. This value is not used in the code. The operations performed in this method invocation only print output; that is, the `greetings` method only has side-effects and does not return a meaningful value.
+
+This code demonstrates two important key concepts: firstly, Ruby's pass by reference value behaviour: the method receives a reference to the original object that's being passed as an argument; and secondly, the variable scope of a method definition: variables initialised inside the method definition cannot be accessed by the outer code, and variables initialised in the outer code can only be accessed and modified if they are passed in as arguments (and mutating methods are operated on those corresponding objects, although this aspect is not demonstrated in this code).
+
+The output is:
+
+```
+Hello
+Goodbye
+```
+
+### Example 6-20250422
+
+```
+start 16:35
+end   16:55
+total 00:20
+```
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -174,6 +199,58 @@ loop do 
 end 
 
 puts "Your total is #{sum}"
+```
+
+In the outer code, the variable `arr` is initialised with a reference to the array object `[1, 2, 3, 4]`, the variable `counter` is initialised with a reference to the integer `0`, and `sum` is initialised with a reference to the integer `0`.
+
+The `loop` method is called and passed a block. The `loop` method executes the block code for each iteration until the conditional statement evaluates as true, and the `break` keyword is executed. Notably, there are operations inside the block that involve the outer variables. The variable scope of a block follows the rules that variables initialised inside the block cannot be accessed by the outer scope, while variables in the outer scope can be accessed and modified from within the block.
+
+Inside the `loop` method's block, `sum += arr[counter]` is evaluated: the variable `sum` is reassigned to the resulting value of incrementing `sum` by the value of `arr[counter]`, and then `counter` is incremented by `1`. The `loop` is terminated if `counter == arr.size` evaluates as true. It's important to note that these operations involve integers which are immutable objects, which means that the operations performed cannot modify the objects in place, but instead return new objects. Since the block can modify outer variables, these reassignment operations merely change the integer objects that the outer variables point to.
+
+```ruby
+# Original states
+arr => [1, 2, 3, 4]
+arr.size => 4
+sum => 0
+counter => 0
+
+# First iteration
+arr[0] --> 1
+sum --> 0 + 1 => 1
+counter --> 0 + 1 => 1
+if condition evaluates as false
+
+# Second iteration
+arr[1] --> 2
+sum --> 1 + 2 => 3
+counter --> 1 + 1 => 2
+if condition evaluates as false
+
+# Third iteration
+arr[2] --> 3
+sum --> 3 + 3 => 6
+counter --> 2 + 1 => 3
+if condition evaluates as false
+
+# Fourth iteration
+arr[3] --> 4
+sum --> 6 + 4 => 10
+counter --> 3 + 1 => 4
+if condition evaluates as true
+break is executed
+
+# After loop method call
+arr => [1, 2, 3, 4]
+sum => 10
+counter => 4
+
+# Loop method returns `nil` since `break` is the last evaluated expression, which returns `nil`. This value is not used in the code.
+```
+
+The final `puts` method call outputs the interpolated string, which shows the new value of `sum`: 
+
+```
+Your total is 10
 ```
 
 ### Example 7

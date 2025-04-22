@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "topics/!main/prep_notes/everything! all of it!.md",
+                "file": "!main/prep_notes/everything! all of it!.md",
                 "mode": "source",
                 "source": false
               },
@@ -27,32 +27,32 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "topics/other concepts/blog-variable_references-mutability.md",
+                "file": "lsbot/answers/0_all/mock-20250422_1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "blog-variable_references-mutability"
+              "title": "mock-20250422_1"
             }
           }
         ]
       },
       {
-        "id": "a9d1a9865c6970a9",
+        "id": "654d6a2ede81ef5e",
         "type": "tabs",
         "children": [
           {
-            "id": "e65dd8a3fad67eba",
+            "id": "e1ed475ce6a41988",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "topics/%first_pass/2_methods/mutating_vs_nonmutating_methods.md",
+                "file": "spot/answers/1st pass/object_passing-variables_as_pointers-20250413.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "mutating_vs_nonmutating_methods"
+              "title": "object_passing-variables_as_pointers-20250413"
             }
           }
         ]
@@ -87,7 +87,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "place",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -112,7 +112,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 331.50312423706055
+    "width": 334.5024719238281
   },
   "right": {
     "id": "b3db2b76e353c910",
@@ -190,7 +190,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -202,42 +203,43 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1f5a9c369a9c817c",
+  "active": "e98a1074d3fdc41a",
   "lastOpenFiles": [
-    "topics/%first_pass/2_methods/mutating_vs_nonmutating_methods.md",
-    "topics/!main/prep_notes/everything! all of it!.md",
-    "everything! all of it!.pdf",
-    "topics/%first_pass/3_general/pass_by_value_vs_pass_by_reference-20250408.md",
-    "topics/%first_pass/2_methods/default_parameters-20250403.md",
-    "topics/everything so far.md",
+    "@daily_practice/by topic/spot",
+    "@daily_practice/by topic/lsbot",
+    "@daily_practice/by topic",
+    "@daily_practice/dailies",
+    "@daily_practice",
+    "brain dump/truthiness-20250404.md",
     "topics/%first_pass/3_general/truthiness-20250404.md",
-    "topics/!main/prep_notes",
-    "topics/%second_pass",
-    "topics/%first_pass",
-    "topics/!main/lsbot_mocks_by_topic/Default parameters-20250418.md",
-    "topics/!main/lsbot_mocks_by_topic",
-    "topics/by_topic",
-    "topics/%first_pass/2_methods/parameters_vs_arguments-20250408.md",
-    "topics/%first_pass/2_methods/method_def_vs_invocation-20250408.md",
-    "spot/answers/object_passing-variables_as_pointers-20250413-WIP.11of12.md",
-    "topics/%first_pass/1_variables/local_variable_scope_method_definitions-20250408.md",
-    "spot/questions/object_passing-variables_as_pointers.md",
-    "topics/other concepts/lsbot-variable isolation.md",
-    "lsbot/answers/3_advanced/adv-20250403-variable_scope.md",
-    "topics/%first_pass/1_variables/local_variable_scope_blocks-20250403.md",
-    "topics/%first_pass/1_variables/scope_of_constants-20250408.md",
-    "topics/%first_pass/1_variables/mutating_vs_reassigning_variables-20250408.md",
+    "topics/everything so far.md",
+    "topics/%first_pass/3_general/pass_by_value_vs_pass_by_reference-20250408.md",
+    "topics/%first_pass/3_general/output_vs_return.md",
     "topics/%first_pass/3_general/mutable_vs_immutable_data_types-20250414.md",
-    "topics/other concepts/blog-mutating_nonmutating_methods.md",
-    "topics/other concepts/blog-variable_references-mutability.md",
-    "topics/!main/prep_notes/everything! all of it! 1.md",
+    "topics/_more/lsbot_mocks_by_topic/Default parameters-20250418.md",
+    "!main",
+    "!main/prep_notes/everything! all of it!.md",
+    "topics/_more/in progress/Return vs output-20250419.md",
+    "lsbot/answers/0_all/mock-20250422_1.md",
+    "lsbot/answers/in_progress/mock-20250403-answers.md",
+    "spot/answers/1st pass/object_passing-variables_as_pointers-20250413.md",
+    "spot/answers/1st pass/object_mutability-20250415-22.md",
+    "!main/prep_notes/methods you should know by now.md",
+    "spot/answers/1st pass/other_collection_methods-20250422.md",
+    "spot/answers/2nd pass/each_map_select-20250417.md",
+    "spot/answers/3rd pass",
+    "spot/answers/1st pass/each_map_select-20250413.md",
+    "spot/in_progress/local_variable_scope-20250414.md",
+    "spot/answers/1st pass",
+    "spot/answers/2nd pass",
+    "spot/answers/Untitled.md",
+    "lsbot/answers/0_all/mock-20250422.md",
+    "brain dump/brain_dump-20250422.md",
     "topics/%first_pass/1_variables/variable_shadowing-20250403.md",
-    "topics/%first_pass/1_variables/variables_as_pointers-20250408.md",
-    "spot/answers/local_variable_scope-20250409.md",
-    "spot/answers/each_map_select-20250417.md",
-    "spot/_more",
-    "study_guide/notes",
-    "exercises/ruby_basics/in progress",
-    "example.rb"
+    "topics/%first_pass/2_methods/passing_and_using_blocks_with_methods.md",
+    "topics/%first_pass/2_methods/using_method_return_values_as_arguments.md",
+    "topics/%first_pass/2_methods/method_def_vs_invocation-20250408.md",
+    "exercises/rb109-small_problems/answers-20250420/reverse_the_digits.rb",
+    "exercises/rb109-small_problems/answers-20250420/repeat_yourself.rb"
   ]
 }

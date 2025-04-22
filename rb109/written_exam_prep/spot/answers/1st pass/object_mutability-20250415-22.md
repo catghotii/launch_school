@@ -158,7 +158,10 @@ The destructive `concat` method is called on `value`, which still contains a ref
 
 This code demonstrates how Ruby handles object passing using a pass by reference value behaviour. Method definitions create their own scope: variables initialised in the outer code cannot be accessed or modified from within a method unless they are passed as arguments and mutating methods are called on those corresponding objects. In this case, the string object is mutated from within the method, and those mutations affect any variables that contain references to the object outside the method.
 
-### Example 5
+### Example 5-20250422
+
+15:48
+16:00
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -174,7 +177,31 @@ t = fix(s)
 
 What values do `s` and `t` have? Why?
 
-### Example 6
+The variable `s` is initialised with a reference to the the string object `'abc'`. The variable `t` is initialised to the return value of `fix(s)`; when the `fix` method is called and passed the argument `s`, the method's return value is passed back to the calling code, which is the object that `t` will reference in this variable assignment.
+
+Inside the method definition, the parameter `value` is bound to the same string object `'abc'` that `s` references—essentially, the method receives a reference to the string object. The operations within the method definition are executed. First, `value[1] = 'x'` is evaluated: `String#[]=` is a mutating setter method, which modifies the string object in place by replacing the string value at the argument's index position with the string `'x'`, resulting in the modified string `'axc'`. Since this is a mutating method that's called on the same string that `s` references, `s` points to the modified string object.
+
+The last expression in the method, `value`, evaluates to the modified string `'axc'`, which is the subsequent implicit return value of the method, which is then passed back to the calling code. `t` references the string object `'axc'`. Effectively, both `s` and `t` contain references to the same string object which has been modified by the method.
+
+Even though the mutating setter operation was performed on the local variable `value` inside the method definition, the outer variable `s` will also see this change. This demonstrates two important concepts: firstly, Ruby's pass by reference value behaviour, whereby methods receive references when passed an argument, and secondly, the variable scope of a method definition: variables initialised inside the method cannot be accessed by the outer scope, and variables initialised outside the method cannot be accessed and modified unless they are passed in as arguments and mutating operations are performed on those corresponding objects.
+
+Since the method definition has mutating operations that are performed on the original string object, any of its references also see these changes, including the outer variable `s`.
+
+```ruby
+# Original state of `s` and `value`
+s --> "abc" <-- value
+
+# After value[1] = 'x'
+s --> "axc" <-- value
+
+# After execution of the method call
+s --> "axc" <-- t
+```
+
+### Example 6-20250422
+
+1913
+1921
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -189,17 +216,37 @@ a_method(a)
 p a
 ```
 
-### Example 7
+The variable `a` is initialised with a reference the the string object `"hello"`. `a_method(a)` is called and passed `a` as an argument. Inside the method definition, the parameter `string` is bound to the same string object `"hello"` that `a` references—essentially, the method receives a reference to the object.
+
+In the method definition, the mutating operation `string << " world"` is evaluated, which modifies the original string in place by concatenating the argument `" world"` to the original string, resulting in `"hello world"`. This mutation can be seen through any of the original object's references, including the outer variable `a`.
+
+The method's return value is the same value as the last evaluated expression,  `"hello world"`, which is passed back to the calling code. This value is not explicitly used by the calling code.
+
+`p a` outputs the value of `a`, which now points to the modified string `"hello world"`.
+
+This code demonstrates a few important concepts: firstly, Ruby's pass by reference value behaviour, where the method receives a reference to the original object that's passed as an argument, and secondly, the variable scope of a method definition, whereby variables initialised in the outer scope cannot be directly accessed or modified unless they are passed in as arguments and mutating operations are performed on the corresponding objects.
+
+In this example, the `a_method` method call is passed an argument of `a`—the method receives a reference to the same object that `a` references, and a mutating method is called on the string object, which modifies the original object in place, with the result that the mutation affects any of its variables outside the method.
+
+```
+# Output:
+'hello world'
+```
+
+### Example 7-20250422
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
 ```ruby
-arr #?
 num = 3
 num = 2 * num
 ```
 
-### Example 8
+On line 1, the variable `num` is initialised with a reference to the integer `3`. On line 2, `num` undergoes reassignment: `2 * num` is evaluated to `6`, and `num` now references this new integer object `6`.
+
+This code demonstrates immutability of integer objects, which means that immutable objects, like integers, cannot be modified once they are created. Instead, they can be reassigned, which means new objects are created and the variable's reference is changed. In this code, `num` is reassigned to reference a new integer object, which is the result of the evaluated expression `2 * num`.
+
+### Example 8-20250422
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -210,7 +257,15 @@ a[1] = '-'
 p a
 ```
 
-### Example 9
+The variable `a` is initialised with a reference to the array object containing strings `['a', 'b', 'c']`.
+
+The next line `a[1] = '-'` is a mutating operation. `Array#[]=` is a setter method that modifies the array by replacing the element of the given index as an argument with the value to the right of `=`. `a[1]` refers to the string object `'b'`, which is replaced with a new string object `'-'`.
+
+This code demonstrates mutability of arrays by using the destructive `Array#[]=` method.
+
+`p a` prints the modified array object, `['a', '-', 'c']`.
+
+### Example 9-20250422
 
 [Link to page with #9 & #10](https://launchschool.com/lessons/a0f3cd44/assignments/4b1ad598)
 
@@ -224,7 +279,24 @@ add_name(names, 'jim')
 puts names
 ```
 
-### Example 10
+The variable `names` is initialised with a reference to the array object `['bob', 'kim']`. The `add_name` method is called and passed two arguments, `names` and the string object `'jim'`.
+
+Inside the method definition, the `arr` parameter is bound to the same array object `['bob', 'kim']` that `names` references, and `name` is bound to the value of the string `'jim'`. Essentially, the method receives references to these objects.
+
+`arr = arr + [name]` is evaluated, which is a reassignment operation. Inside the method, the local variable `arr` is reassigned to the evaluated result of `arr + [name]`—`['bob', 'kim'] + ['jim']` results in a new array `['bob', 'kim', 'jim']`, and `arr` is assigned to the new array. Notably, this reassignment is a non-mutating operation, which means the original object `names` is not affected by the operation inside the method; the outer variable `names` still points to the original array `['bob', 'kim']`. After execution of the expressions in the method, the method's return value is evaluated, which is the same value as the last evaluated expression during execution of the method, the new array `['bob', 'kim', 'jim']` (although the return value is not used in this code).
+
+This code demonstrates key concepts: variable scope of a method definition, Ruby's pass by reference value behaviour, and how non-mutating methods within a method definition create new objects rather than modifying the original object(s) in place.
+
+The method definition creates its own scope: any variables initialised in the outer code cannot be directly accessed or modified from within the method definition unless they are passed as arguments and mutating operations are performed on those corresponding objects. In this example, the method receives references to the objects that are passed as arguments—`arr` receives a reference to the array object that the outer variable `names` references, while `name` receives the value of the string object that's passed as an argument. However, the reassignment in the method body is a non-mutating operation, which creates a new object that's bound to the local variable `arr`, which also means that the original object remains unchanged. The outer variable `names` continues to point to the original array, `['bob', 'kim',]`, which is the output of `puts names`: each element is output on a newline.
+
+```
+# Output:
+
+bob
+kim
+```
+
+### Example 10-20250422
 
 ```ruby
 def add_name(arr, name)
@@ -235,3 +307,22 @@ names = ['bob', 'kim']
 add_name(names, 'jim')
 puts names
 ```
+
+The variable `names` is initialised with a reference to the array object `['bob', 'kim']`. The `add_name` method is called and passed two arguments, `names` and the string object `'jim'`. Inside the method definition, the parameter `arr` is bound to the same array object `['bob', 'kim']` that the outer variable `names` references, and `name` is bound to the string object `'jim'`.
+
+The expression in the method body is evaluated: `arr = arr << name` is a reassignment operation that involves a mutating method. `arr << name` is first evaluated: `<<` is a mutating method that modifies the original array `['bob', 'kim']` by appending its argument to the array, resulting in `['bob', 'kim', 'jim']`. This mutation of the original object can be seen through any of its references, including the outer variable `names`, which points to the modified object. The modified array is then assigned to the local variable `arr` inside the method definition—effectively, `arr` contains a reference to the same object that the outer `variable` names also references—and the evaluated result of this expression, `['bob', 'kim', 'jim']`, is also the return value of the method (as it is the evaluated result of last expression of the method as well). This return value is passed back to the calling code, although it is not used in this code snippet.
+
+`puts names` will output the elements of the original array object that has been mutated by the `add_name` method invocation, separated by newlines:
+
+```
+# Output:
+
+bob
+kim
+jim
+```
+
+This code demonstrates:
+- Variable scope of a method definition: variables initialised in the outer code cannot be directly accessed or modified unless they are passed as arguments and mutating operations are performed on those corresponding objects.
+- Ruby's pass by reference value behaviour: the outer variable `names` is passed as the first argument and the method parameter `arr` receives a reference to the the array object `['bob', 'kim']`
+- Mutating methods within method definitions: `<<` is a destructive method that modifies the original array object in place, and this mutation can be examined through any of its references outside the method definition, including `names`.

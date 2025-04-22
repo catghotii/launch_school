@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "type": "group",
+      "ctime": 1745320578261,
+      "items": [
+        {
+          "type": "file",
+          "ctime": 1745320567093,
+          "path": "!main/prep_notes/everything! all of it!.md"
+        }
+      ],
+      "title": "main"
+    },
+    {
+      "type": "group",
+      "ctime": 1745320590414,
+      "items": [],
+      "title": "current"
+    }
+  ]
+}

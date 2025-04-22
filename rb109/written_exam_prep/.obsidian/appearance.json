@@ -1,5 +1,5 @@
 {
-  "textFontFamily": "IBM Plex Sans",
+  "textFontFamily": "Inter,IBM Plex Sans",
   "baseFontSize": 14,
   "monospaceFontFamily": "JetBrains Mono",
   "cssTheme": "AnuPpuccin",
