@@ -328,16 +328,65 @@ some_method(name)
 - Although the method parameter has the same name as the outer variable `name`, they are entirely separate—they just happen to have the same name.
 - This is not variable shadowing because a method definition creates its own scope with its own local variables.
 
+---
 ### Scope of constants
 
-Constants are variables whose values are intended to remain unchanged through the program execution—they should be treated as immutable objects. (However, Ruby allows constants to be modified though it will issue a warning.) Constants defined at the top level of the program are globally accessible.
+Constants are variables whose values should remain unchanged through execution of the program—they should be treated as immutable objects.
 
-Constants have lexical scope, which means they are available within the code where they are defined and any nested blocks. Unlike local variables, constants can be accessed outside the block in which they are defined.
+(Ruby does allow for modifying constants though it does issue a warning!)
+(use `freeze` to prevent modification)
+
+Constants defined at the top level of the program are globally accessible.
+- define a constant with a capital letter --> by convention constants are written in `ALL_CAPITALS`
+
+Scope:
+- **Lexical scope** --> constants are available within the scope they are defined and any nested blocks
+- Unlike local variables, constants can be accessed outside the block in which they are defined.
+
+##### Code examples
+
+**Example 1: Basic scope of constants vs local variables inside blocks**
 
 ```ruby
-MAX_SCORE = 100
+FAVOURITE_ANIMAL = "elephant"
 
-### UPDATE CODE
+loop do
+  puts "I love #{FAVOURITE_ANIMAL}!"
+  FAVOURITE_COLOUR = "green" # define a constant inside a block
+  break
+end
+
+puts FAVOURITE_ANIMAL # => "elephant"
+puts FAVOURITE_COLOUR # => "green" (accessible outside of block)
+
+# Compare with local variable behaviour
+
+loop do
+  another_cool_animal = "sloth"
+  break
+end
+
+puts another_cool_animal # NameError: undefined local variable
+```
+
+**Example 2: Constants in methods and blocks**
+
+```ruby
+MINIMUM_LENGTH = 8
+
+def password_long_enough?(password)
+  password.length > MINIMUM_LENGTH # constant accessible in method
+end
+
+my_password = "password123"
+puts password_long_enough?(my_password)
+
+loop do
+  INVALID_PASSWORDS = [ "rubysucks" ] # constant defined in block
+  break
+end
+
+puts !(password_long_enough?(my_password) && INVALID_PASSWORDS.include?(my_password)) ? "Valid password!" : "Invalid password!"
 ```
 
 ---
