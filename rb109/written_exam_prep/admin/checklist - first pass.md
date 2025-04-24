@@ -29,7 +29,7 @@ SPOT questions
 - [x] Local variable scope
 - [x] Variable shadowing
 - [x] Object passing / variables as pointers
-- [ ] Object mutability / mutating methods
+- [x] Object mutability / mutating methods
 - [x] each, map, select
-- [ ] Other collection methods
+- [x] Other collection methods
 - [x] Truthiness

@@ -1,5 +1,11 @@
-if 1 + 2
-  greeting = "hello world"
+def add_name(names, name)
+  names << name
+  name.upcase!
 end
 
-puts greeting
+names = ['bob', 'kim']
+name = 'jim'
+add_name(names, name)
+
+puts name
+puts names
